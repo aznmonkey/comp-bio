@@ -4,16 +4,11 @@ $(document).ready(function(){
     });
 });
 
-$(function() { 
-    // for bootstrap 3 use 'shown.bs.tab', for bootstrap 2 use 'shown' in the next line
-    $('a[data-toggle="dropdown"]').on('shown.bs.dropdown', function (e) {
-        // save the latest tab; use cookies if you like 'em better:
-        localStorage.setItem('lastTab', $(this).attr('href'));
-    });
-
-    // go to the latest tab, if it exists:
-    var lastTab = localStorage.getItem('lastTab');
-    if (lastTab) {
-        $('[href="' + lastTab + '"]').pill('show');
+var url = document.location.toString(); // select current url shown in browser.
+if (url.match('#')) {
+    $('.nav-pills a[href=#' + url.split('#')[1] + ']').tab('show'); // activate current tab after reload page.
     }
+    // Change hash for page-reload
+    $('.nav-pills a').on('shown', function (e) { // this function call when we change tab.
+        window.location.hash = e.target.hash; // to change hash location in url.
 });
