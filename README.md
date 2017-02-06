@@ -5,7 +5,7 @@ Team Members
 * MengQi Xing
 
 ## Page Link
-Link is located [here](https://aznmonkey/github.io/comp-bio)
+Link is located [here](https://aznmonkey.github.io/comp-bio)
 
 ## Copyright and License
 
