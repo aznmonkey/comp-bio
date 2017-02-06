@@ -17,6 +17,9 @@
     <!-- Custom CSS -->
     <link href="css/portfolio-item.css" rel="stylesheet">
 
+    <!-- Page CSS -->
+    <link href="css/cs502.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,25 +31,10 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">CS502 Project Page</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    <!-- Page Header -->
+    <div class="jumbotron jumbotron-custom">
+        <h1><center>Computational Biology Project Page</center></h1>      
+    </div>
 
     <!-- Page Content -->
     <div class="container">
@@ -54,8 +42,15 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav nav-pills nav-justified">
 				<li class="active"><a href="#home">Home</a></li>
-				<li><a href="#project">Project</a></li>
-				<li><a href="#about">Github Page</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="#project1">Related Entries</a></li>
+                    <li><a href="#project2">Project 2 Placeholder</a></li>
+                    </ul>
+                </li>
+				<li><a href="https://github.com/aznmonkey/comp-bio">Github Page</a></li>
 			</ul>
         </div>
 
@@ -90,15 +85,41 @@
 			</div>
 			<!-- /.Home -->
 			
-			<!-- Project -->
-			<div id="project" class="tab-pane fade"> 
+            <!-- /.Related Entry Assignment -->
+            <div id="project1" class="tab-pane fade"> 
+                <div class="container">
+                    <h2>Related Databases</h2>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p> 
+                                The database we decided to use was the NCBI database. The NCBI stands for the 
+                                National Center for Biotechnology Information and is a part of the United States National Library of Medicine.
+                                More information can be found <a href="https://en.wikipedia.org/wiki/National_Center_for_Biotechnology_Information">here </a>. 
+                                The reason we chose this database was the due to the fact it contains a variety of published papers regarding biotech research, 
+                                and as such can be considered a biological database.
+                            </p>
+                            <p> 
+                                For our criteria to determine similiarity, we decided on a scheme similar to the <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdos number </a>
+                                used in mathematics. It is basically a measure of the degree of separation between papers. Alternatively, papers can be though of as 
+                                nodes in a graph and the degree of separation is the shortest path from one node to another. For our example we will choose two papers.
+                            </p>
+                            <p> 
+                                Paper 1: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3375009/"> KB-Rank: efficient protein structure and functional annotation identification via text query. </a>
+                                <br> 
+                                Paper 2: <a href="https://www.ncbi.nlm.nih.gov/pubmed/21082424"> Protein bioinformatics databases and resources. </a>
+                                <br>
+                                <br> 
+                                The second paper is referenced by the first, thus the degree of separation is 1. We would consider the papers to be similar in this case
+
+                            
+                        </div>
+                    </div>
+                </div>
 			</div>
-			<!-- /.Project -->
-			
-			<!-- About -->
-			<div id="about" class="tab-pane fade"> 
+			<!-- Project2 -->
+			<div id="project2" class="tab-pane fade"> 
 			</div>
-			<!-- /.About -->
+			<!-- /.Project2 -->
 			
         </div>
         
