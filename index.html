@@ -104,7 +104,7 @@
                                 Our criteria for determining similiarity is inspired by the <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdos number </a>
                                 used to describe the connectedness of mathematical researchers. While the Erdos number measures the degree of separation between the authors of papers, we measure the distance in terms of citations between the papers in the same database.
 <p>
-We propose that the distance between papers in the same database can be computed by building a directed graph G = (V, E), where each vertex v in V represents one of the <i>n</i> papers in the database. For each citation from a paper <i>p</i> to another paper <i>q</i> in the same database, assign a single directed edge <i>e</i> from a corresponding vertex <i>v</i> to a vertex <i>w</i> in <i>G</i>.
+We propose that the distance between papers in the same database can be computed by building a directed graph G = (V, E), where every vertex v &isin; V represents one of the <i>n</i> papers in the database. For each citation from a paper <i>p</i> to another paper <i>q</i> in the same database, assign a single directed edge <i>e<sub>pq</sub></i> from a corresponding vertex <i>v<sub>p</sub></i> to a vertex <i>v<sub>q</sub></i> in <i>G</i>.
 	
 	<p>
 		We can represent the edges between each of vertices representing the <i>n</i> papers in a database using an adjacency matrix. Below is an example illustration:
