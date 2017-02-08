@@ -107,12 +107,12 @@
 We propose that the distance between papers in the same database can be computed by building a directed graph G = (V, E), where each vertex v in V represents one of the <i>n</i> papers in the database. A citation from one paper p to another paper q is represented by a single directed edge e in E.
 	
 	<p>
-		We can represent the edges between each of the <b>n</b> papers in a database using an adjacency matrix. Below is an example illustration.
+		We can represent the edges between each of the <b>n</b> papers in a database using an adjacency matrix. Below is an example illustration:
 		<p>
 			<img src="adjacencymatrix.jpg">
 	
 	<p>
-		We define the <b>distance</b> to be the shortest path from one vertex to another.
+		For two papers <i>p</i> and <i>q</i> to be considered <b>closely related</b>, there must be a path from the vertex representing <i>p</i> to the one representing <i>q</i>. We define <b>distance</b> to be the shortest path from one vertex to another.
 
 <p>
 The two entries we chose are:
@@ -130,7 +130,7 @@ The two entries we chose are:
 				    <img src="path.jpg">
 				    
 				    <p>
-					    We would consider the papers to be closely related in this case.
+					    Since there is a path of length only 1 between these two papers, they are closely related.
 
                             
                         </div>
