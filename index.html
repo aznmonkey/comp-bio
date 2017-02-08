@@ -90,7 +90,9 @@
             <!-- /.Related Entry Assignment -->
             <div id="project1" class="tab-pane fade"> 
                 <div class="container">
-                    <h2>Related Entries</h2>
+                    <div class="page-header">
+                        <center><h2>Related Entries</h2></center>
+                    </div>
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <p> 
@@ -103,35 +105,37 @@
                             <p> 
                                 Our criteria for determining similiarity is inspired by the <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdos number </a>
                                 used to describe the connectedness of mathematical researchers. While the Erdos number measures the degree of separation between the authors of papers, we measure the distance in terms of citations between the papers in the same database.
-<p>
-We propose that the distance between papers in the same database can be computed by building a directed graph G = (V, E), where every vertex v &isin; V represents one of the <i>n</i> papers in the database. For each citation from a paper <i>p</i> to another paper <i>q</i> in the same database, assign a single directed edge <i>e<sub>pq</sub></i> from a corresponding vertex <i>v<sub>p</sub></i> to a vertex <i>v<sub>q</sub></i> in <i>G</i>.
-	
-	<p>
-		We can represent the edges between each of vertices representing the <i>n</i> papers in a database using an adjacency matrix. Below is an example illustration:
-		<p>
-			<img src="adjacencymatrix.jpg">
-	
-	<p>
-		For two papers <i>p</i> and <i>q</i> to be considered <b>closely related</b>, there must be a path from the vertex corresponding to <i>p</i> to the one that corresponds to <i>q</i>. We define <b>distance</b> to be the shortest path from one vertex to another.
-
-<p>
-The two entries we chose are:
                             </p>
-                            <p> 
+                            <p>
+                                We propose that the distance between papers in the same database can be computed by building a directed graph G = (V, E), where every vertex v &isin; V represents one of the <i>n</i> papers in the database. For each citation from a paper <i>p</i> to another paper <i>q</i> in the same database, assign a single directed edge <i>e<sub>pq</sub></i> from a corresponding vertex <i>v<sub>p</sub></i> to a vertex <i>v<sub>q</sub></i> in <i>G</i>
+                            </p>
+                        	<p>
+		                        We can represent the edges between each of vertices representing the <i>n</i> papers in a database using an adjacency matrix. Below is an example illustration:
+		                        <br>
+			                    <center><img src="images/adjacencymatrix.jpg"></center>
+                                <br>
+                            For two papers <i>p</i> and <i>q</i> to be considered <b>closely related</b>, there must be a path from the vertex corresponding to <i>p</i> to the one that corresponds to <i>q</i>. We define <b>distance</b> to be the shortest path from one vertex to another.
+
+                            </p>
+                            <p>
+                            The two entries we chose are:
+                            <br>
                                 Paper 1: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3375009/"> KB-Rank: efficient protein structure and functional annotation identification via text query. </a>
                                 <br> 
                                 Paper 2: <a href="https://www.ncbi.nlm.nih.gov/pubmed/21082424"> Protein bioinformatics databases and resources. </a>
                                 <br>
                                 <br> 
                                 The second paper is referenced by the first, thus the distance is 1.
-				    <p>
-				    Below is a graph of the path between these two papers.
-				    <br>
-				    <img src="graphExample.jpg">
+                            </p>    
+				            <p>
+				                Below is a graph of the path between these two papers.
+				            </p>    
+                                <br>
+				                <center><img src="images/graphExample.jpg"></center>
 				    
-				    <p>
-					    Since there is a path of length only 1 between these two papers, they are closely related.
-
+				            <p>
+					            Since there is a path of length only 1 between these two papers, they are closely related.
+                            </p>
                             
                         </div>
                     </div>
