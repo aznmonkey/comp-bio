@@ -139,7 +139,7 @@
 
 						                           <div class="panel panel-default">
                         <div class="panel-body">
- <font size="+2">
+ <font size="+1">
 <p>In a 3-D backbone structure, the protein design problem determines the optimal sequence of rotamers (discretized protein side chains) that satisfies the physical chemical potential functions and stereochemical constraints. This involves computing the GMEC, global minimum energy conformation, the solution of an amino acid sequence that minimizes the objective function E<sub>T</sub>(r) =E<sub>0</sub>+i=1nE<sub>1</sub>(r<sub>i</sub>)+i=1nji+1nE<sub>1</sub>(r<sub>i</sub>,r<sub>j</sub>) , where E<sub>T</sub>(r) is the total energy and the parameter is rotamer assignment. In this 2016 paper from <i>Journal of Computational Biology</i>, the journal of <i>Recomb</i>, the proposed graph theoretic solution branches on conformational subspaces in AND/OR search. Current heuristic (as GMEC is a NP-hard problem) solutions have fallen into two groups: ones which approximate the GMEC, but can be trapped in local energy minimas and lead to a poor final solution; and ones that provide an exact solution, such as A*, but whose search spaces are too large. This paper solves the problem by getting rid of the rotamers known not to be part of the optimal solution. This prunes the search space and produces a modified AND/OR branch and bound search algorithm. The lowest energy conformation is determined suboptimally for each branch, and identified globally from these branches. Only the n mutable residues need to be kept in memory because the search is depth-first. The algorithm was tested to be both space- and time-efficient in minimizing the energy conformation compared with other existing algorithms.
 
 	<p>
