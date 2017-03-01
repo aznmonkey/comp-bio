@@ -174,9 +174,9 @@
                         <div class="panel-body">
                             
                             <p>
-    Social network analysis is concerned with the prominence of actors in a network, as represented by nodes. One such measure of prominence is centrality, which characterizes the number of edges that a node participates in. In brain networks, a hub is a node that participates in many interactions or can be demonstrated to exhibit centrality by participating in many paths. In addition to nodes, edges can also exhibit centrality, which can be used to determine modularity. Existing research has shown that if brain damage, injury, disease or trauma causes edges or nodes to be removed, the more central these components are, the worse the implications may be for the rest of the brain. 
+    Social network analysis is concerned with actors, as represented by nodes, and the communities, or subgraphs, that they are a part of. One measure of prominence of actors in a network is centrality, which characterizes the number of edges that a node participates in. In brain networks, a hub is a node that participates in many interactions or can be demonstrated to exhibit centrality by participating in many paths[1]. In addition to nodes, edges can also exhibit centrality, which can be used to determine modularity. Existing research has shown that if brain damage, injury, disease or trauma causes edges or nodes to be removed, the more central these components are, the worse the implications may be for the rest of the brain. 
 </p>
-                                Existing research has applied graph theory to resting-state fMRI-based functional networks and discovered disruptions in these network for patients with Alzheimer’s and anxiety [1,2]. Anxiety is a disorder with significant costs to professional and academic productivity [3]. Due to an overactive limbic system and problems in emotion regulation, sufferers of social anxiety have a heightened response to threat, as shown through negative thought patterns [4]. Studies have shown that social anxiety patients are more easily affected by the influence of negative images and often have difficulty down-regulating their negative emotions [5]. However, not a lot of network evidence has been found to support these observations. In addition, not many studies have been done on task performance, and on evaluating the network alteration during the task.
+                                Existing research has applied graph theory to resting-state fMRI-based functional networks and discovered disruptions in these network for patients with Alzheimer’s and anxiety [2,3]. Anxiety is a disorder with significant costs to professional and academic productivity [4]. Due to an overactive limbic system and problems in emotion regulation, sufferers of social anxiety have a heightened response to threat, as shown through negative thought patterns [5]. Studies have shown that social anxiety patients are more easily affected by the influence of negative images and often have difficulty down-regulating their negative emotions [6]. However, not a lot of network evidence has been found to support these observations. In addition, not many studies have been done on task performance, and on evaluating the network alteration during the task.
                             </p>
                             <p>
                                 Thus, we will examine two groups of demographically matched healthy and social anxiety patients’ brain network data during emotion regulation tasks. We will look at how the two groups performed throughout the entire task, to see if there are any alterations or differences between the groups. The participants have been asked to view one of two types of images: images with no emotional stimulators (landscape, everyday activities etc.), or images with negative emotional stimulators (disasters, accidents etc.). Upon being shown an image that corresponds to a negative emotion, participants have been asked to either maintain their negative feelings, or try to reduce sad feelings by re-interpreting the image. 
@@ -184,7 +184,7 @@
                             <p>
                                 A 34*34 symetrical matrix can be generated based on one EEG task senario for each subject (see Figure 1 for example). 34 corresponds to the number of recording electrodes and each index is the strength of connection between two channels (ranging from 0 to 1). Therefore, every matrix can be converted into an undirected, weighted graph (see Figure 2 for an example graph representation for two selected electrodes). All the data were collected from the Mood and Anxiety Research Program at UIC; subjects' label and information have been erased under IRB protocol. 
                             <p>
-                                We will make core graphs based on the electrode locations. In order to visualize the network, we plan to employ a chord diagram, which has commonly been used for network analysis and has numerous libraries which support it [6]. Once we convert the data into a graph representation, we will run the modularity-based community detection algorithm, which is an algorithm based around edge centrality. This optimization algorithm maximizes differences between groups of nodes. By rearranging groups based on community assignments, we can develop a before and after graph.
+                                We will make core graphs based on the electrode locations. In order to visualize the network, we plan to employ a chord diagram, which has commonly been used for network analysis and has numerous libraries which support it [7]. Once we convert the data into a graph representation, we will run the modularity-based community detection algorithm, which is an algorithm based around edge centrality. This optimization algorithm maximizes differences between groups of nodes. By rearranging groups based on community assignments, we can develop a before and after graph.
 
                             </p>
                             <p>
@@ -195,19 +195,20 @@
                             </p>
                             <u>References</u>
                             <br>
-                            [1] X. Zhao, Y. Liu, X. Wang, B. Liu, Q. Xi, Q. Guo, H. Jiang, T. Jiang, P. Wang. "Disrupted small-world brain networks in moderate Alzheimer's disease: a resting-state fMRI study." </i>PLoS One</i>, 7 (2012), e33540.
+                            [1] B. Liu, 270-2.
+                            [2] X. Zhao, Y. Liu, X. Wang, B. Liu, Q. Xi, Q. Guo, H. Jiang, T. Jiang, P. Wang. "Disrupted small-world brain networks in moderate Alzheimer's disease: a resting-state fMRI study." </i>PLoS One</i>, 7 (2012), e33540.
                             <br>
-                            [2] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29 (2011), 701–711.
+                            [3] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29 (2011), 701–711.
                             <br>
-                            [3] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4 (2014), 15.
+                            [4] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4 (2014), 15.
                             <br>
-                            [4] M. Xing, R. Tadayonnejad, A. MacNamara, et al. "Resting-state theta band connectivity and graph analysis in generalized social anxiety disorder." <i>NeuroImage: Clinical</i>. 2017;13:24-32. doi:10.1016/j.nicl.2016.11.009.
+                            [5] M. Xing, R. Tadayonnejad, A. MacNamara, et al. "Resting-state theta band connectivity and graph analysis in generalized social anxiety disorder." <i>NeuroImage: Clinical</i>. 2017;13:24-32. doi:10.1016/j.nicl.2016.11.009.
                             <br>
-                            [5] J.J. Gross. "Emotion regulation: Affective, cognitive, and social consequences." <i>Psychophysiology</i>, 39: 281–291 (2002). doi:10.1017/S0048577201393198.
+                            [6] J.J. Gross. "Emotion regulation: Affective, cognitive, and social consequences." <i>Psychophysiology</i>, 39: 281–291 (2002). doi:10.1017/S0048577201393198.
                             <br>
-                            [6] M. Bostock, V. Ogievetsky, J. Heer, "D3 data-driven documents", <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12 (Dec. 2011), 2301-2309.
+                            [7] M. Bostock, V. Ogievetsky, J. Heer, "D3 data-driven documents", <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12 (Dec. 2011), 2301-2309.
                             <br>
-                            [7] https://arxiv.org/abs/1108.1502
+                            [8] https://arxiv.org/abs/1108.1502
                         </div>
                     </div>
                 </div>
