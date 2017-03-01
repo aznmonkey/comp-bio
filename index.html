@@ -174,10 +174,10 @@
                         <div class="panel-body">
                             
                             <p>
-    Social network analysis is concerned with actors, as represented by nodes in a graph, and the communities, or subgraphs, that they are a part of. A community -- or as we think of them for the brain, module -- is a subset of nodes that frequently interacts with each other [1]. Existing research has developed algorithms to detect communities by optimizing the distance between different modules [3]. One example of modularity-based community detection is an algorithm based around edge centrality [9]. In brain networks, an edge is central if it participates in many interactions or paths [2].
+    Social network analysis is concerned with actors, as represented by nodes in a graph, and the communities, or subgraphs, that they are a part of [1]. A community -- or as we think of them for the brain, module -- is a subset of nodes that frequently interacts with each other [2]. Existing research has developed algorithms to detect communities by optimizing the distance between different modules [3]. One example of modularity-based community detection is an algorithm based around edge centrality [4]. In brain networks, an edge is central if it participates in many interactions or paths [5].
 </p>
 
-                                Graph theory has been applied to resting-state fMRI-based functional networks to discover disruptions in these network for patients with Alzheimer’s and anxiety [3,4]. Anxiety is a disorder with significant costs to professional and academic productivity [5]. Due to an overactive limbic system and problems in emotion regulation, sufferers of social anxiety have a heightened response to threat, as shown through negative thought patterns [6]. Studies have shown that social anxiety patients are more easily affected by the influence of negative images and often have difficulty down-regulating their negative emotions [7]. However, not a lot of network evidence has been found to support these observations. In addition, not many studies have been done on task performance, and on evaluating the network alteration during the task.
+                                Graph theory has been applied to resting-state fMRI-based functional networks to discover disruptions in these network for patients with Alzheimer’s and anxiety [6,7]. Anxiety is a disorder with significant costs to professional and academic productivity [8]. Due to an overactive limbic system and problems in emotion regulation, sufferers of social anxiety have a heightened response to threat, as shown through negative thought patterns [9]. Studies have shown that social anxiety patients are more easily affected by the influence of negative images and often have difficulty down-regulating their negative emotions [10]. However, not a lot of network evidence has been found to support these observations. In addition, not many studies have been done on task performance, and on evaluating the network alteration during the task.
                             </p>
                             <p>
                                 Thus, we will examine two groups of demographically matched healthy and social anxiety patients’ brain network data during emotion regulation tasks. We will look at how the two groups performed throughout the entire task, to see if there are any alterations or differences between the groups. The participants have been asked to view one of two types of images: images with no emotional stimulators (landscape, everyday activities etc.), or images with negative emotional stimulators (disasters, accidents etc.). Upon being shown an image that corresponds to a negative emotion, participants have been asked to either maintain their negative feelings, or try to reduce sad feelings by re-interpreting the image. 
@@ -185,33 +185,40 @@
                             <p>
                                 A 34*34 symetrical matrix can be generated based on one EEG task senario for each subject (see Figure 1 for example). 34 corresponds to the number of recording electrodes and each index is the strength of connection between two channels (ranging from 0 to 1). Therefore, every matrix can be converted into an undirected, weighted graph (see Figure 2 for an example graph representation for two selected electrodes). All the data were collected from the Mood and Anxiety Research Program at UIC; subjects' label and information have been erased under IRB protocol. 
                             <p>
-                                We will make core graphs based on the electrode locations, both before and after each set of tasks, for each of the groups. In order to visualize the network, we plan to employ a chord diagram, which has commonly been used for network analysis and has numerous libraries which support it [8]. Once we convert the data into a graph representation, we will run the modularity-based community detection algorithm on the before and after graphs. We will look at whether the community assignments in the brain become rearranged from the before graph to the after graph due to the negative emotion task versus the neutral emotion task, for the sick patients versus the control group.
+                                We will make core graphs based on the electrode locations, both before and after each set of tasks, for each of the groups. In order to visualize the network, we plan to employ a chord diagram, which has commonly been used for network analysis and has numerous libraries which support it [11]. Once we convert the data into a graph representation, we will run the modularity-based community detection algorithm on the before and after graphs. We will look at whether the community assignments in the brain become rearranged from the before graph to the after graph due to the negative emotion task versus the neutral emotion task, for the sick patients versus the control group.
 
                             </p>
                             <p>
-                                In addition, standard statistics will be applied to find out if differences in the underlying graph properties suggest a group difference or a task difference. As a result, we will see whether social anxiety makes a difference in the grouping patterns formed in brain networks engaged under different tasks. Looking into these graph properties for the brain under the tasks will provide more insight into the overall network differences in emotion and cognitive processing of social anxiety patients. 
+                                Standard statistics will be applied to find out if differences in the underlying graph properties suggest a group difference or a task difference. As a result, we will see whether social anxiety makes a difference in the grouping patterns formed in brain networks engaged under different tasks. Looking into these graph properties for the brain under the tasks will provide more insight into the overall network differences in emotion and cognitive processing of social anxiety patients. 
                             </p>
                             <p>
                                 
                             </p>
                             <u>References</u>
+                                                        <br>
+                            [1] B. Liu, <i>Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data.</i> Second edition. Heidelberg: Springer. 270-2. (2011). 
                             <br>
-                            [1] https://books.google.com/books?id=CAm2DpIqRUIC&pg=PA249&lpg=PA249&dq=Cohesive+subgroups+or+subsets+of+actors+among+whom+they+are+relatively+strong&source=bl&ots=HvNtud-GLb&sig=Cbf_nnpVbjfp1T8jRN6smB1N0IQ&hl=en&sa=X&ved=0ahUKEwij1a3rx7TSAhVCRSYKHUZKDXwQ6AEILTAC#v=onepage&q=Cohesive%20subgroups%20or%20subsets%20of%20actors%20among%20whom%20they%20are%20relatively%20strong&f=false p. 249.
-                            [2] B. Liu, 270-2.
-                            [3] https://arxiv.org/abs/physics/0602124
-                            [3] X. Zhao, Y. Liu, X. Wang, B. Liu, Q. Xi, Q. Guo, H. Jiang, T. Jiang, P. Wang. "Disrupted small-world brain networks in moderate Alzheimer's disease: a resting-state fMRI study." </i>PLoS One</i>, 7 (2012), e33540.
+                            [2] K. Faust and S. Wasserman. <i>Social Network Analysis: Methods and Applications</i>. Cambridge: Cambridge UP. 249. (1994).
                             <br>
-                            [4] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29 (2011), 701–711.
+                            [3] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
                             <br>
-                            [5] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4 (2014), 15.
+                            [4] P. De Meo, E. Ferrara, G. Fiumara, A. Provetti. "Generalized Louvain method for community detection in large networks." <i>Proceedings of the 11th International Conference On Intelligent Systems Design And Applications <i>, 88-93 (2011).
                             <br>
-                            [6] M. Xing, R. Tadayonnejad, A. MacNamara, et al. "Resting-state theta band connectivity and graph analysis in generalized social anxiety disorder." <i>NeuroImage: Clinical</i>. 2017;13:24-32. doi:10.1016/j.nicl.2016.11.009.
+                            [5] O. Sporns. <i> Networks of the Brain: Quantitative Analysis and Modeling</i>. Cambridge, MA: MIT Press (2010).
                             <br>
-                            [7] J.J. Gross. "Emotion regulation: Affective, cognitive, and social consequences." <i>Psychophysiology</i>, 39: 281–291 (2002). doi:10.1017/S0048577201393198.
+                            [6] X. Zhao, Y. Liu, X. Wang, B. Liu, Q. Xi, Q. Guo, H. Jiang, T. Jiang, P. Wang. "Disrupted small-world brain networks in moderate Alzheimer's disease: a resting-state fMRI study." </i>PLoS One</i>, 7 (2012), e33540.
                             <br>
-                            [8] M. Bostock, V. Ogievetsky, J. Heer, "D3 data-driven documents", <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12 (Dec. 2011), 2301-2309.
+                            [7] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29 (2011), 701–711.
                             <br>
-                            [9] https://arxiv.org/abs/1108.1502
+                            [8] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4 (2014), 15.
+                            <br>
+                            [9] M. Xing, R. Tadayonnejad, A. MacNamara, et al. "Resting-state theta band connectivity and graph analysis in generalized social anxiety disorder." <i>NeuroImage: Clinical</i>. 13:24-32 (2017). doi:10.1016/j.nicl.2016.11.009.
+                            <br>
+                            [10] J.J. Gross. "Emotion regulation: Affective, cognitive, and social consequences." <i>Psychophysiology</i>, 39: 281–291 (2002). doi:10.1017/S0048577201393198.
+                            <br>
+                            [11] M. Bostock, V. Ogievetsky, J. Heer, "D3 data-driven documents", <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12: 2301-2309 (Dec. 2011).
+                            <br>
+
                         </div>
                     </div>
                 </div>
