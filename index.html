@@ -200,12 +200,20 @@
                                 </center>
 				            <p>
                                 In order to visualize the network, we will make chord graphs based on the electrode locations, both before and after each set of tasks, for each of the groups. The chord diagram has commonly been used for network analysis and has numerous libraries to support it [5]. We will investigate network differences in the brain between the before and after graphs due to the negative emotion task versus the neutral emotion task, for the sick patients versus the control group. Our goal is to see whether running existing techniques on this particular data set will suggest insights consistent with or different from previous findings. We know there will some differences in the behaviors of the two test groups, but knowing how they perform differently on a network level will provide more insight into the neural activation of SAD patients, which will be meaningful for future treatment.
-</p>
-
-<p>
-Network analysis is concerned with the nodes on a graph, and the communities, or subgraphs, they belong to [6]. A community -- or as we think of them for the brain, module -- is a subset of nodes with more links to each other than to nodes in other communities [7]. Community identification can be considered a form of unsupervised learning, or clustering. Existing research has developed algorithms to identify communities by optimizing the distance between different modules. We hypothesize that modularity will be the graph property that stands out as being different between the sick patients and the control group. If that is the case, we will run the Newman modularity-based community detection algorithm on the before and after graphs. This algorithm has been shown to perform better than some other methods, and is appropriate for graphs with a smaller number of nodes. We will use a Python library called <a href="https://networkx.github.io/">NetworkX</a>  [8]. Our immediate next steps are to better understand the capabilities of this library, and better understand the Newman paper [9], to figure out how to use the library to run the algorithm. We believe these steps will be non-trivial.
-
                             </p>
+                            
+                            <center>
+                                <div class="card">
+                                    <img class="card-img-top" src="images/d3chords.png" alt="Card image cap">
+                                    <div class="card-block">
+                                        <p class="card-text">Figure 3: Sample Chord Diagram built in D3.js[5] </p>
+                                    </div>
+                                </div>
+                            </center>
+                            <p>
+                                Network analysis is concerned with the nodes on a graph, and the communities, or subgraphs, they belong to [6]. A community -- or as we think of them for the brain, module -- is a subset of nodes with more links to each other than to nodes in other communities [7]. Community identification can be considered a form of unsupervised learning, or clustering. Existing research has developed algorithms to identify communities by optimizing the distance between different modules. We hypothesize that modularity will be the graph property that stands out as being different between the sick patients and the control group. If that is the case, we will run the Newman modularity-based community detection algorithm on the before and after graphs. This algorithm has been shown to perform better than some other methods, and is appropriate for graphs with a smaller number of nodes. We will use a Python library called <a href="https://networkx.github.io/">NetworkX</a>  [8]. Our immediate next steps are to better understand the capabilities of this library, and better understand the Newman paper [9], to figure out how to use the library to run the algorithm. We believe these steps will be non-trivial.
+                            </p>
+
                             <p>
                                 If the data does not turn out to suggest clear modules, we may also select from other graph properties to analyze such as betweenness, clustering coefficient, average path length, network efficiency, etc. Depending on the parameter that is relevant to the data, we may run standard statistical tests such as the t-test in R to test whether the graph properties suggest group differences, and two-way ANOVA to investigate the task-group interaction. As a result, we will see whether social anxiety makes a difference in the grouping patterns formed in brain networks engaged under different tasks. Looking into these graph properties for the brain under the tasks will provide more insight into the overall network differences in emotion and cognitive processing of social anxiety patients.
                             </p>
@@ -213,32 +221,30 @@ Network analysis is concerned with the nodes on a graph, and the communities, or
                                 
                             </p>
 
-<p>
-<u>Acknowledgments</u><br>
-We rely on data collected under Dr. Heidi Klumpp. This data is the same group of subjects referenced in [2], of which Dr. Klumpp is a corresponding author.
-</p>
+                            <p>
+                            <u>Acknowledgments</u><br>
+                                We rely on data collected under Dr. Heidi Klumpp. This data is the same group of subjects referenced in [2], of which Dr. Klumpp is a corresponding author.
+                            </p>
+                            
                             <u>References</u>
-                                                        <br>
-                                                                                    [1] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4:15 (2014).
                             <br>
-                            [2] M. Xing, R. Tadayonnejad, A. MacNamara, H. Klumpp et al. "Resting-state theta band connectivity and graph analysis in generalized social anxiety disorder." <i>NeuroImage: Clinical</i>. 13:24-32 (2017).
+                                [1] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4:15 (2014).
                             <br>
-                            [3] J.J. Gross. "Emotion regulation: Affective, cognitive, and social consequences." <i>Psychophysiology</i>, 39: 281–291 (2002).
+                                [2] M. Xing, R. Tadayonnejad, A. MacNamara, H. Klumpp et al. "Resting-state theta band connectivity and graph analysis in generalized social anxiety disorder." <i>NeuroImage: Clinical</i>. 13:24-32 (2017).
                             <br>
-                            [4] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29: 701-711 (2011).
-                                                        <br>
-                            [5] M. Bostock, V. Ogievetsky, J. Heer. "D3 data-driven documents." <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12: 2301-2309 (Dec. 2011).
+                                [3] J.J. Gross. "Emotion regulation: Affective, cognitive, and social consequences." <i>Psychophysiology</i>, 39: 281–291 (2002).
                             <br>
-                            [6] B. Liu. <i>Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data.</i> Second edition. Heidelberg: Springer (2011). 
+                                [4] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29: 701-711 (2011).
                             <br>
-                            [7] K. Faust and S. Wasserman. <i>Social Network Analysis: Methods and Applications</i>. Cambridge: Cambridge UP (1994).
+                                [5] M. Bostock, V. Ogievetsky, J. Heer. "D3 data-driven documents." <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12: 2301-2309 (Dec. 2011).
                             <br>
-                            [8] A.A. Hagberg, D.A. Schult, P.J. Swart. "Exploring network structure, dynamics, and function using NetworkX." <i>SciPy2008</i>. 11–15(2008).
-
-                                                        <br>
-
-                            [9] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
-
+                                [6] B. Liu. <i>Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data.</i> Second edition. Heidelberg: Springer (2011). 
+                            <br>
+                                [7] K. Faust and S. Wasserman. <i>Social Network Analysis: Methods and Applications</i>. Cambridge: Cambridge UP (1994).
+                            <br>
+                                [8] A.A. Hagberg, D.A. Schult, P.J. Swart. "Exploring network structure, dynamics, and function using NetworkX." <i>SciPy2008</i>. 11–15(2008).
+                            <br>
+                                [9] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
 
                         </div>
                     </div>
