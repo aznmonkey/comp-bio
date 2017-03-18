@@ -265,7 +265,29 @@
                             Issues in the connectivity of the frontal cortex, which plays a role in perceiving what is going on in other people’s minds, at rest may lead to deficits in social perception [1].
 
 <p>
-                            [1] Ding 708-9. 
+                            <b>Edge and Node Properties as Applied to the Brain</b>
+                            <br>
+                            Network analysis is concerned with the prominence of actors in a network, as represented by nodes. One such measure of prominence is centrality, which characterizes the number of edges that a node participates in [2]. In management research, for example, social network analysis is used to determine which actors are central enough to an organization that losing them could be detrimental [3].
+A node is said to have betweenness centrality relative to two other nodes if it is on a path between those nodes. In brain networks, a hub is a node that participates in many interactions or can be demonstrated to exhibit betweenness by participating in many paths. In addition to nodes, edges can also exhibit betweenness, which can be used to determine modularity [3]. Analysis of centrality can let us know which edges or nodes could cause problems if they are deleted. 
+
+<p>
+<b>Community Properties as Applied to the Brain</b>
+<br>
+A community -- or as we think of them for the brain, module -- is a subset of nodes that interacts more frequently with each other than with others [4]. Community identification could be considered a form of unsupervised learning, or clustering. The nodes within a community should be close together, while nodes from different communities should be as far apart as possible. Existing research has developed algorithms to identify communities by optimizing the distance between different modules [5]. Trying to minimize the number of communities identified in a network is NP-hard, so there are approximations such as the generalized Louvain algorithm, a modularity-based community detection algorithm based around edge centrality. The Louvain algorithm ranks edges by their tendency to send information throughout the network. More formally, it ranks each edge by its k-path centrality, which is the sum of the proportions of times that messages cross through that edge [6].
+
+<p>
+                            [1] Ding 708-9. <br>
+                            [2] O. Sporns. <i> Networks of the Brain: Quantitative Analysis and Modeling</i>. Cambridge, MA: MIT P, 11-12 (2010). <br>
+                            [3] Bing Liu pp. 270-2 <br>
+                            [4] K. Faust and S. Wasserman. <i>Social Network Analysis: Methods and Applications</i>. Cambridge: Cambridge UP, 249 (1994).
+                            <br>
+                            [5] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
+                            <br>
+                            [4] 
+                            <br>
+                            [6] P. De Meo, E. Ferrara, G. Fiumara, A. Provetti. "Generalized Louvain method for community detection in large networks." <i>Proceedings of the 11th International Conference On Intelligent Systems Design And Applications</i>, 88-93 (2011).
+                            <br>
+
 
                         </div>
                     </div>
