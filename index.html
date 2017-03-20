@@ -173,94 +173,95 @@
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            
+                            <h3>Background </h3>
+                            <p> 
+                                According to the definition from the American Psychological Association, a person who has social anxiety disorder (SAD) has exaggerated reactions in circumstances of perceived social judgment[1]. Due to an overactive limbic system and problems in emotion regulation, sufferers of social anxiety have a heightened response to threat, as shown through greater attention to negative facial and thought patterns[2]. 
+                            </p>
                             <p>
-                                <b>Background </b><br>
-According to the definition from the American Psychological Association, a person who has social anxiety disorder (SAD) has exaggerated reactions in circumstances of perceived social judgment . Due to an overactive limbic system and problems in emotion regulation, sufferers of social anxiety have a heightened response to the threat, as shown through greater attention to negative facial patterns, and negative thought patterns . 
-An emotion regulation task (ERT) is a standard task to test subject ability to down-regulate a negative emotion . In our study, we will examine data in which participants were asked to view one of two types of images: ones with no emotional stimulators (landscape, everyday activities, etc.), or ones with negative emotional stimulators (disasters, accidents, etc.). Upon being shown an image that corresponds to a negative emotion, participants were asked to either maintain their negative emotions or try to reduce their negative emotions by re-interpreting the image.
-<p>
-This kind of data is stored in brain network matrices, which we can apply network analysis to. Network analysis is concerned with the nodes on a graph, and the communities, or subgraphs, they belong to . Properties like centrality, average path length, clustering coefficient and modularity are commonly used in network analysis. Research has shown that if brain damage, injury, disease or trauma causes edges or nodes to be removed, the more central these components are, the worse the implications may be for the rest of the brain.  This study will collect related parameters of network properties and extract network differences in activation patterns during ERT. 
-<p>
-<b>Motivation</b><br>
-SAD is a disorder with significant costs to professional and academic productivity . Research using conventional fMRI imaging signal contrast has revealed that social anxiety patients are more easily affected by negative images and struggle to down-regulate negative emotions  Moreover, sufferers of social anxiety disorder show stronger connections in the left amygdala than healthy controls do . However, it remains unknown what the active patterns on a brain network scale are for SAD patients. Graph theory is a feasible approach to study the SAD brain network. Application of graph theory to the resting state network has uncovered disruptions in fMRI-based functional networks in anxiety patients . Analyzing the active patterns of the diseased brain network will provide a data-driven approach to understanding the inner mechanism of the SAD brain on a whole-brain scale. Hopefully, this can provide insight into identifying brain regions of interest for SAD treatment and diagnosis. 
- <p>
-<b>Specific Aims </b><br>
-We aim to discover underlying patterns for the SAD brain during emotion regulation by analyzing the electroencephalography (EEG)-based SAD network during emotion regulation. We will explore global network properties such as clustering coefficient, average path length; and edge and node properties such as degree distribution, betweenness, and centrality. Our goal is to see whether running existing techniques on this particular data set will suggest insights consistent with or different from previous findings.
-<p>
-<b>Research Strategy </b><br>
-1.  Data description <br>
+                                An emotion regulation task (ERT) is a standard task to test a subject’s ability to down-regulate a negative emotion[3]. In our study, we will examine data in which participants were asked to view one of two types of images: ones with no emotional stimulators (landscape, everyday activities, etc.), or ones with negative emotional stimulators (disasters, accidents, etc.). Upon being shown an image that corresponds to a negative emotion, participants were then asked to either maintain their negative emotions or try to reduce their negative emotions by re-interpreting the image.
+                            </p>
+                            <p>
+                                The procured data is stored in brain network matrices, which we can apply network analysis techniques to. Network analysis involves analyzing the nodes on a graph, and determining the communities, or subgraphs, they belong to[4]. Properties like centrality, average path length, clustering coefficient and modularity are commonly used in network analysis. Research has shown that if brain damage, injury, disease or trauma causes edges or nodes to be removed, the more central these components are, the worse the implications may be for the rest of the brain[5]. This study will collect related parameters of network properties and extract network differences in activation patterns during ERT. 
+                            </p>
 
-EEG data was collected from twenty SAD patients and twenty demographically matched healthy subjects while performing the emotion regulation task. All tests were conducted under Dr. Heide Klumpp from the Mood and Anxiety Research Program at UIC. The test subjects' label and information have been erased under IRB protocol*. Prior to this study, each task scenario, for each test subject, was mapped onto a 34*34 matrix via a functional mapping algorithm Weighted Phase Lag Index . 34 corresponds to the number of recording electrodes and each index is the strength of the connection between two channels (ranging from 0 to 1, see Figure 1 for example). Each subject's matrix is averaged over a 5-minute recording in which they viewed 20+ images, so the effects of any image that could have triggered exceptional responses are smoothed out. Every matrix can be converted into an undirected, weighted graph (see Figure 2 for an example graph representation of two selected electrodes).
+                            <h3>Motivation</h3>
+                            <p>
+                                SAD is a disorder with significant costs to professional and academic productivity[6]. Research using conventional fMRI imaging signal contrast has revealed that social anxiety patients are more easily affected by negative images and struggle to down-regulate negative emotions[7]. Moreover, sufferers of social anxiety disorder show stronger connections in the left amygdala than healthy controls do[3]. However, it remains unknown what the active patterns on a brain network scale are for SAD patients. Graph theory is a feasible approach to study the SAD brain network. Application of graph theory to the resting state network has uncovered disruptions in fMRI-based functional networks in anxiety patients. Analyzing the active patterns of the diseased brain network will provide a data-driven approach to gain understanding into the inner mechanism of the SAD brain on a whole-brain scale. Hopefully, this can provide insight into identifying brain regions of interest for SAD treatment and diagnosis. 
+                            </p>
 
-				               
+                            <h3>Specific Aims </h3>
+                            <p>
+                                We aim to discover underlying patterns for the SAD brain during emotion regulation by analyzing electroencephalography (EEG)-based SAD networks during emotion regulation. We will explore global network properties such as clustering coefficient, average path length; and edge and nodal properties such as degree distribution, betweenness, and centrality. Our goal is to see whether performing existing techniques on this particular dataset will provide insights that reinforce or challenge previous findings.
+                            </p>
+                            
+                            <h3>Research Strategy </h3>                            
+                            <h4>1.  Data description </h4> 
+                            <p>
+                                EEG data was collected from twenty SAD patients and twenty demographically matched healthy subjects while performing the emotion regulation task. All tests were conducted under Dr. Heide Klumpp from the Mood and Anxiety Research Program at UIC. The test subjects' label and information have been erased under IRB protocol*. Prior to this study, each task scenario, for each test subject, was mapped onto a 34*34 matrix via a functional mapping algorithm Weighted Phase Lag Index[9]. 34 corresponds to the number of recording electrodes and each index is the strength of the connection between two channels (ranging from 0 to 1, see Figure 1 for example). Each subject's matrix is averaged over a 5-minute recording in which they viewed 20+ images, so the effects of any image that could have triggered exceptional responses are smoothed out. Every matrix can be converted into an undirected, weighted graph (see Figure 2 for an example graph representation of two selected electrodes).				               
 				            </p>    
                                 <br>
                                 <center>
                                 <div class="card">
                                     <img class="card-img-top" src="images/ProposalFigure1.jpg" alt="Card image cap">
                                     <div class="card-block">
-                                        <p class="card-text">Figure 1: An example of an EEG connectivity matrix during the resting state. [2]</p>
+                                        <p class="card-text">Figure 1: An example of an EEG connectivity matrix during the resting state[2].</p>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <img class="card-img-top" src="images/ProposalFigure2.jpg" alt="Card image cap">
                                     <div class="card-block">
-                                        <p class="card-text">Figure 2: Two frontal channels' edges on the electrodes' location-based graph. [2] </p>
+                                        <p class="card-text">Figure 2: Two frontal channels' edges on the electrodes' location-based graph[2].  </p>
                                     </div>
                                 </div>
                                 </center>
-				            <p>
 
-
-                                2.  Research method <br>
-In addition to the properties listed in our Specific Aims, we will also investigate a community property: modularity. For all the property analyses, we will use a Python library called NetworkX  . The Louvain method will be the prior approach for community detection. If the stability of Louvain is not ideal, we will test the Newman approach. Our immediate next steps are to better understand the capabilities of this library, and better understand the Newman paper , to figure out how to use the library to run the algorithm. We believe these steps will be non-trivial.<p>
-Depending on the parameter that is relevant to the data, for basic global properties, we may run standard statistical tests such as the t-test in R to see whether the graph properties suggest group differences, and two-way ANOVA to investigate the task-group interaction. We will use other nodal and community properties as unsupervised learning features, to see if we can detect any meaningful clusters. Overall, we will see whether social anxiety makes a difference in the grouping patterns formed in brain networks engaged under different tasks. Looking into these graph properties for the brain under the tasks will provide more insight into the overall network differences in emotion and cognitive processing of social anxiety patients.<p>
-Some visualization tools will be applied to assist in understanding the results. We will make chord graphs based on the electrode locations, both before and after each set of tasks, for each of the groups. The chord diagram has commonly been used for network analysis and has numerous libraries to support it . We will investigate network differences in the brain between the before and after graphs due to the negative emotion task versus the neutral emotion task, for the sick patients versus the control group. We expect differences in the behaviors of the two test groups, but knowing how they perform differently on a network level will provide more insight into the neural activation of SAD patients, which will be meaningful for future treatment.
-
+                            <h4>2.  Research method </h4> 
+                            <p>
+                                In addition to the properties listed in our Specific Aims, we will also investigate a community property: modularity. For all the property analyses, we will use a Python library called NetworkX[10]. The Louvain method will be the prior approach for community detection. If the stability of Louvain is not ideal, we will test the Newman approach. Our immediate next steps are to better understand the capabilities of this library, and better understand the Newman paper[11], to figure out how to use the library to run the algorithm. We believe these steps will be non-trivial.
                             </p>
-                            
+                            <p>
+                                Depending on the parameter that is relevant to the data, for basic global properties, we may run standard statistical tests such as the t-test in R to see whether the graph properties suggest group differences, and two-way ANOVA to investigate the task-group interaction. We will use other nodal and community properties as unsupervised learning features, to see if we can detect any meaningful clusters. Overall, we will see whether social anxiety makes a difference in the grouping patterns formed in brain networks engaged under different tasks. Looking into these graph properties for the brain under the tasks will provide more insight into the overall network differences in emotion and cognitive processing of social anxiety patients.
+                            </p>
+                            <p>
+                                Some visualization tools will be applied to assist in understanding the results. We will make chord graphs based on the electrode locations, both before and after each set of tasks, for each of the groups. The chord diagram has commonly been used for network analysis and has numerous libraries to support it[8]. We will investigate network differences in the brain between the before and after graphs due to the negative emotion task versus the neutral emotion task, for the sick patients versus the control group. We expect differences in the behaviors of the two test groups, but knowing how they perform differently on a network level will provide more insight into the neural activation of SAD patients, which will be meaningful for future treatment.
+                            </p>
+
                             <center>
                                 <div class="card">
                                     <img class="card-img-top" src="images/d3chords.png" alt="Card image cap">
                                     <div class="card-block">
-                                        <p class="card-text">Figure 3: Sample Chord Diagram built in D3.js[5] </p>
+                                        <p class="card-text">Figure 3: Sample Chord Diagram built in D3.js[8]. </p>
                                     </div>
                                 </div>
                             </center>
-                            <p>
-
-
-                                
-                            </p>
-                            <p>
-                                
-                            </p>
 
                             <p>
-                            <u>Acknowledgments</u><br>
+                            <h3>Acknowledgments</h3>
                                 We rely on data collected under Dr. Heidi Klumpp. This data is the same group of subjects referenced in [2], of which Dr. Klumpp is a corresponding author.
                             </p>
                             
-                            <u>References</u>
+                            <h4><u>References</u></h4>
+                                [1] American Psychological Association. (2013). Diagnostic and statistical manual of mental disorders (5th ed.). Arlington, VA: American Psychiatric Publishing.
                             <br>
-                                [1] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4:15 (2014).
-                            <br>
-                                [2] M. Xing, R. Tadayonnejad, A. MacNamara, H. Klumpp et al. "Resting-state theta band connectivity and graph analysis in generalized social anxiety disorder." <i>NeuroImage: Clinical</i>. 13:24-32 (2017).
+                                [2] M. Xing, R. Tadayonnejad, A. MacNamara, H. Klumpp et al. "Resting-state theta band connectivity and graph analysis in generalized social anxiety disorder." NeuroImage: Clinical. 13:24-32 (2017). 
                             <br>
                                 [3] J.J. Gross. "Emotion regulation: Affective, cognitive, and social consequences." <i>Psychophysiology</i>, 39: 281–291 (2002).
                             <br>
-                                [4] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29: 701-711 (2011).
+                                [4] B. Liu. Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data. Second edition. Heidelberg: Springer (2011). 
                             <br>
-                                [5] M. Bostock, V. Ogievetsky, J. Heer. "D3 data-driven documents." <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12: 2301-2309 (Dec. 2011).
+                                [5] J. Alstott, M. Breakspear, P. Hagmann, L. Cammoun & O. Sporns. Modeling the impact of lesions in the human brain. PLoS Comput Biol, 5(6), e1000408 (2009). 
                             <br>
-                                [6] B. Liu. <i>Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data.</i> Second edition. Heidelberg: Springer (2011). 
+                                [6] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4:15 (2014).
                             <br>
-                                [7] K. Faust and S. Wasserman. <i>Social Network Analysis: Methods and Applications</i>. Cambridge: Cambridge UP (1994).
+                                [7] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29: 701-711 (2011).
                             <br>
-                                [8] A.A. Hagberg, D.A. Schult, P.J. Swart. "Exploring network structure, dynamics, and function using NetworkX." <i>SciPy2008</i>. 11–15(2008).
+                                [8] M. Bostock, V. Ogievetsky, J. Heer. "D3 data-driven documents." <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12: 2301-2309 (Dec. 2011).
                             <br>
-                                [9] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
-
+                                [9] M. Cohen. “Analyzing Neural Time Series Data: Theory and Practice”, MIT Press, Boston, USA(2014)
+                            <br>
+                                [10] A.A. Hagberg, D.A. Schult, P.J. Swart. "Exploring network structure, dynamics, and function using NetworkX." SciPy2008. 11–15(2008).
+                            <br>
+                                [11] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
                         </div>
                     </div>
                 </div>
