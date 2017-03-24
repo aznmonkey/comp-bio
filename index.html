@@ -159,7 +159,7 @@
                             <p>
                             <u>Bibliography</u>
                             <br>
-                             [1] Norvig, Peter and Stuart J. Russell (2015). <i>Artificial Intelligence: A Modern Approach</i>. Third edition. Delhi: Pearson. 136-7.
+                             [1] Norvig, Peter and Stuart J. Russell (2015). <i>Artificial Intelligence: A Modern Approach</i>. Third edition. Delhi: Pearson.
 
                         </div>
 					</div>
@@ -182,10 +182,10 @@
                             </p>
 
                             <p>
-                            	Neurons, the cells in the brain, communicate with each other through electrochemical reactions. Electroencephalography (EEG) is used to detect problems with these electrical signals, which may indicate a neurological disorder, by placing electrodes on a person's head[12, 14, 16]. An electrode is a metal conductor[13]. In this study, we will be examining brain activity using EEG.
+                            	Neurons, the cells in the brain, communicate with each other through electrochemical reactions. Electroencephalography (EEG) is used to detect problems with these electrical signals, which may indicate a neurological disorder, by placing electrodes on a person's head[4, 5, 6]. An electrode is a metal conductor[7]. In this study, we will be examining brain activity using EEG.
 
                             <p>
-                                The data for this study is stored in brain network matrices, which we can apply network analysis techniques to. Network analysis involves analyzing the nodes on a graph, and determining the communities, or subgraphs, they belong to[4]. Properties like centrality, average path length, clustering coefficient and modularity are commonly used in network analysis. Research has shown that if brain damage, injury, disease or trauma causes edges or nodes to be removed, the more central these components are, the worse the implications may be for the rest of the brain[5]. This study will collect related parameters of network properties and extract network differences in activation patterns during ERT. 
+                                The data for this study is stored in brain network matrices, which we can apply network analysis techniques to. Network analysis involves analyzing the nodes on a graph, and determining the communities, or subgraphs, they belong to[8]. Properties like centrality, average path length, clustering coefficient and modularity are commonly used in network analysis. Research has shown that if brain damage, injury, disease or trauma causes edges or nodes to be removed, the more central these components are, the worse the implications may be for the rest of the brain[9]. This study will collect related parameters of network properties and extract network differences in activation patterns during ERT. 
                             </p>
 
                             <h3>Motivation</h3>
@@ -201,7 +201,7 @@
                             <h3>Research Strategy </h3>                            
                             <h4>1.  Data description </h4> 
                             <p>
-                                EEG data was collected from twenty SAD patients and twenty demographically matched healthy subjects while performing the emotion regulation task. All tests were conducted under Dr. Heide Klumpp from the Mood and Anxiety Research Program at UIC. The test subjects' label and information have been erased under IRB protocol*. Prior to this study, each task scenario, for each test subject, was mapped onto a 34*34 matrix via a functional mapping algorithm Weighted Phase Lag Index[9]. We can think of this like a weighted adjacency matrix. 34 corresponds to the number of recording electrodes per subject. Each electrode is a channel[15]. Each channel also has a numeric mapping between 0 and 33, and each array entry [i, j] indexes into the strength of the connection between two channels i, j. The strength is a float between 0 and 1 (see the color code in Figure 1 for example). Each subject's matrix is averaged over a 5-minute recording in which they viewed 20+ images, so the effects of any image that could have triggered exceptional responses are smoothed out. Every matrix can be converted into an undirected, weighted graph, in which each electrode is mapped to a node (see Figure 2 for an example graph representation of two selected electrodes).				               
+                                EEG data was collected from twenty SAD patients and twenty demographically matched healthy subjects while performing the emotion regulation task. All tests were conducted under Dr. Heide Klumpp from the Mood and Anxiety Research Program at UIC. The test subjects' label and information have been erased under IRB protocol*. Prior to this study, each task scenario, for each test subject, was mapped onto a 34*34 matrix via a functional mapping algorithm Weighted Phase Lag Index[12]. We can think of this like a weighted adjacency matrix. 34 corresponds to the number of recording electrodes per subject. Each electrode is a channel[15]. Each channel also has a numeric mapping between 0 and 33, and each array entry [i, j] indexes into the strength of the connection between two channels i, j. The strength is a float between 0 and 1 (see the color code in Figure 1 for example). Each subject's matrix is averaged over a 5-minute recording in which they viewed 20+ images, so the effects of any image that could have triggered exceptional responses are smoothed out. Every matrix can be converted into an undirected, weighted graph, in which each electrode is mapped to a node (see Figure 2 for an example graph representation of two selected electrodes).				               
 				            </p>    
                                 <br>
                                 <center>
@@ -251,7 +251,15 @@
                             <br>
                                 [3] J.J. Gross. "Emotion regulation: Affective, cognitive, and social consequences." <i>Psychophysiology</i>, 39: 281–291 (2002).
                             <br>
-                                [4] B. Liu. Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data. Second edition. Heidelberg: Springer (2011). 
+                                [4] "EEG." In <i>Mayo Clinic</i>. http://www.mayoclinic.org/tests-procedures/eeg/basics/definition/prc-20014093 Accessed 22 Mar. 2017.
+							<br>
+                            	[9] "EEG." In <i>KidsHealth from Nemours.</i> http://kidshealth.org/en/parents/eeg.html Accessed 22 Mar. 2017.
+                            <br>
+                            	[6] P. Norvig and S.J. Russell. <i>Artificial Intelligence: A Modern Approach</i>. Third edition. Delhi: Pearson (2015).
+                            <br>
+                            	[7] "Electrode." In <i>Merriam-Webster</i>. https://www.merriam-webster.com/dictionary/electrode Accessed 23 Mar. 2017.
+                            <br>
+                                [8] B. Liu. Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data. Second edition. Heidelberg: Springer (2011). 
                             <br>
                                 [5] J. Alstott, M. Breakspear, P. Hagmann, L. Cammoun & O. Sporns. Modeling the impact of lesions in the human brain. PLoS Comput Biol, 5(6), e1000408 (2009). 
                             <br>
@@ -261,21 +269,15 @@
                             <br>
                                 [8] M. Bostock, V. Ogievetsky, J. Heer. "D3 data-driven documents." <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12: 2301-2309 (Dec. 2011).
                             <br>
-                                [9] M. Cohen. “Analyzing Neural Time Series Data: Theory and Practice”, MIT Press, Boston, USA(2014)
+                                [12] M. Cohen. “Analyzing Neural Time Series Data: Theory and Practice”, MIT Press, Boston, USA(2014)
                             <br>
                                 [10] A.A. Hagberg, D.A. Schult, P.J. Swart. "Exploring network structure, dynamics, and function using NetworkX." SciPy2008. 11–15(2008).
                             <br>
                                 [11] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
                             <br>
-                            	[12] http://www.mayoclinic.org/tests-procedures/eeg/basics/definition/prc-20014093
-                            <br>
-                            	[13] https://www.merriam-webster.com/dictionary/electrode
-                            <br>
-                            	[14] http://kidshealth.org/en/parents/eeg.html
-                            <br>
+ 
                             	[15] http://neurosky.com/2015/07/multi-channel-eeg-bci-devices/
-                            <br>
-                            	[16] Artificial Intelligence
+
                         </div>
                     </div>
                 </div>
