@@ -190,7 +190,7 @@
 
                             <h3>Motivation</h3>
                             <p>
-                                SAD is a disorder with significant costs to professional and academic productivity[6]. Research using conventional fMRI imaging signal contrast has revealed that social anxiety patients are more easily affected by negative images and struggle to down-regulate negative emotions[7]. Moreover, sufferers of social anxiety disorder show stronger connections in the left amygdala than healthy controls do[3]. However, it remains unknown what the active patterns on a brain network scale are for SAD patients. Graph theory is a feasible approach to study the SAD brain network. Application of graph theory to the resting state network has uncovered disruptions in fMRI-based functional networks in anxiety patients. Analyzing the active patterns of the diseased brain network will provide a data-driven approach to understanding the inner mechanism of the SAD brain on a whole-brain scale. Hopefully, this can provide insight into identifying brain regions of interest for SAD treatment and diagnosis. 
+                                SAD is a disorder with significant costs to professional and academic productivity[10]. Research using conventional fMRI imaging signal contrast has revealed that social anxiety patients are more easily affected by negative images and struggle to down-regulate negative emotions[11]. Moreover, sufferers of social anxiety disorder show stronger connections in the left amygdala than healthy controls do[3]. However, it remains unknown what the active patterns on a brain network scale are for SAD patients. Graph theory is a feasible approach to study the SAD brain network. Application of graph theory to the resting state network has uncovered disruptions in fMRI-based functional networks in anxiety patients. Analyzing the active patterns of the diseased brain network will provide a data-driven approach to understanding the inner mechanism of the SAD brain on a whole-brain scale. Hopefully, this can provide insight into identifying brain regions of interest for SAD treatment and diagnosis. 
                             </p>
 
                             <h3>Specific Aims </h3>
@@ -201,7 +201,7 @@
                             <h3>Research Strategy </h3>                            
                             <h4>1.  Data description </h4> 
                             <p>
-                                EEG data was collected from twenty SAD patients and twenty demographically matched healthy subjects while performing the emotion regulation task. All tests were conducted under Dr. Heide Klumpp from the Mood and Anxiety Research Program at UIC. The test subjects' label and information have been erased under IRB protocol*. Prior to this study, each task scenario, for each test subject, was mapped onto a 34*34 matrix via a functional mapping algorithm Weighted Phase Lag Index[12]. We can think of this like a weighted adjacency matrix. 34 corresponds to the number of recording electrodes per subject. Each electrode is a channel[15]. Each channel also has a numeric mapping between 0 and 33, and each array entry [i, j] indexes into the strength of the connection between two channels i, j. The strength is a float between 0 and 1 (see the color code in Figure 1 for example). Each subject's matrix is averaged over a 5-minute recording in which they viewed 20+ images, so the effects of any image that could have triggered exceptional responses are smoothed out. Every matrix can be converted into an undirected, weighted graph, in which each electrode is mapped to a node (see Figure 2 for an example graph representation of two selected electrodes).				               
+                                EEG data was collected from twenty SAD patients and twenty demographically matched healthy subjects while performing the emotion regulation task. All tests were conducted under Dr. Heide Klumpp from the Mood and Anxiety Research Program at UIC. The test subjects' label and information have been erased under IRB protocol*. Prior to this study, each task scenario, for each test subject, was mapped onto a 34*34 matrix via a functional mapping algorithm Weighted Phase Lag Index[12]. We can think of this like a weighted adjacency matrix. 34 corresponds to the number of recording electrodes per subject. Each electrode is a channel[13]. Each channel also has a numeric mapping between 0 and 33, and each array entry [i, j] indexes into the strength of the connection between two channels i, j. The strength is a float between 0 and 1 (see the color code in Figure 1 for example). Each subject's matrix is averaged over a 5-minute recording in which they viewed 20+ images, so the effects of any image that could have triggered exceptional responses are smoothed out. Every matrix can be converted into an undirected, weighted graph, in which each electrode is mapped to a node (see Figure 2 for an example graph representation of two selected electrodes).				               
 				            </p>    
                                 <br>
                                 <center>
@@ -221,20 +221,20 @@
 
                             <h4>2.  Research method </h4> 
                             <p>
-                                In addition to the properties listed in our Specific Aims, we will also investigate a community property: modularity. For all the property analyses, we will use a Python library called NetworkX[10]. The Louvain method will be the prior approach for community detection. If the stability of Louvain is not ideal, we will test the Newman approach. Our immediate next steps are to better understand the capabilities of this library, and better understand the Newman paper[11], to figure out how to use the library to run the algorithm. We believe these steps will be non-trivial.
+                                In addition to the properties listed in our Specific Aims, we will also investigate a community property: modularity. For all the property analyses, we will use a Python library called NetworkX[14]. The Louvain method will be the prior approach for community detection. If the stability of Louvain is not ideal, we will test the Newman approach. Our immediate next steps are to better understand the capabilities of this library, and better understand the Newman paper[15], to figure out how to use the library to run the algorithm. We believe these steps will be non-trivial.
                             </p>
                             <p>
                                 Depending on the parameter that is relevant to the data, for basic global properties, we may run standard statistical tests such as the t-test in R to see whether the graph properties suggest group differences, and two-way ANOVA to investigate the task-group interaction. We will use other nodal and community properties as unsupervised learning features, to see if we can detect any meaningful clusters. Overall, we will see whether social anxiety makes a difference in the grouping patterns formed in brain networks engaged under different tasks. Looking into these graph properties for the brain under the tasks will provide more insight into the overall network differences in emotion and cognitive processing of social anxiety patients.
                             </p>
                             <p>
-                                Some visualization tools will be applied to assist in understanding the results. We will make chord graphs based on the electrode locations, both before and after each set of tasks, for each of the groups. The chord diagram has commonly been used for network analysis and has numerous libraries to support it[8]. We will investigate network differences in the brain between the before and after graphs due to the negative emotion task versus the neutral emotion task, for the sick patients versus the control group. We expect differences in the behaviors of the two test groups, but knowing how they perform differently on a network level will provide more insight into the neural activation of SAD patients, which will be meaningful for future treatment.
+                                Some visualization tools will be applied to assist in understanding the results. We will make chord graphs based on the electrode locations, both before and after each set of tasks, for each of the groups. The chord diagram has commonly been used for network analysis and has numerous libraries to support it[16]. We will investigate network differences in the brain between the before and after graphs due to the negative emotion task versus the neutral emotion task, for the sick patients versus the control group. We expect differences in the behaviors of the two test groups, but knowing how they perform differently on a network level will provide more insight into the neural activation of SAD patients, which will be meaningful for future treatment.
                             </p>
 
                             <center>
                                 <div class="card">
                                     <img class="card-img-top" src="images/d3chords.png" alt="Card image cap">
                                     <div class="card-block">
-                                        <p class="card-text">Figure 3: Sample Chord Diagram built in D3.js[8]. </p>
+                                        <p class="card-text">Figure 3: Sample Chord Diagram built in D3.js[14]. </p>
                                     </div>
                                 </div>
                             </center>
@@ -253,30 +253,30 @@
                             <br>
                                 [4] "EEG." In <i>Mayo Clinic</i>. http://www.mayoclinic.org/tests-procedures/eeg/basics/definition/prc-20014093 Accessed 22 Mar. 2017.
 							<br>
-                            	[9] "EEG." In <i>KidsHealth from Nemours.</i> http://kidshealth.org/en/parents/eeg.html Accessed 22 Mar. 2017.
+                            	[5] "EEG." In <i>KidsHealth from Nemours.</i> http://kidshealth.org/en/parents/eeg.html Accessed 22 Mar. 2017.
                             <br>
                             	[6] P. Norvig and S.J. Russell. <i>Artificial Intelligence: A Modern Approach</i>. Third edition. Delhi: Pearson (2015).
                             <br>
-                            	[7] "Electrode." In <i>Merriam-Webster</i>. https://www.merriam-webster.com/dictionary/electrode Accessed 23 Mar. 2017.
+                            	[7] "Electrode." In <i>Merriam-Webster</i>. https://www.merriam-webster.com/dictionary/electrode Accessed 22 Mar. 2017.
                             <br>
                                 [8] B. Liu. Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data. Second edition. Heidelberg: Springer (2011). 
                             <br>
-                                [5] J. Alstott, M. Breakspear, P. Hagmann, L. Cammoun & O. Sporns. Modeling the impact of lesions in the human brain. PLoS Comput Biol, 5(6), e1000408 (2009). 
+                                [9] J. Alstott, M. Breakspear, P. Hagmann, L. Cammoun & O. Sporns. Modeling the impact of lesions in the human brain. PLoS Comput Biol, 5(6) (2009). 
                             <br>
-                                [6] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4:15 (2014).
+                                [10] L. Hamm, R.H. Jacobs, M.W. Johnson, D.A. Fitzgerald, K.D. Fitzgerald, S.A. Langenecker, et al. "Aberrant amygdala functional connectivity at rest in pediatric anxiety disorders." <i>Biol Mood Anxiety Disord</i>, 4:15 (2014).
                             <br>
-                                [7] J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29: 701-711 (2011).
-                            <br>
-                                [8] M. Bostock, V. Ogievetsky, J. Heer. "D3 data-driven documents." <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12: 2301-2309 (Dec. 2011).
+                                [11 J. Ding, H. Chen, C. Qiu, W. Liao, J.M. Warwick, X. Duan, W. Zhang, Q. Gong. "Disrupted functional connectivity in social anxiety disorder: a resting-state fMRI study." <i>Magn. Reson. Imag.</i>i, 29: 701-711 (2011).
                             <br>
                                 [12] M. Cohen. “Analyzing Neural Time Series Data: Theory and Practice”, MIT Press, Boston, USA(2014)
                             <br>
-                                [10] A.A. Hagberg, D.A. Schult, P.J. Swart. "Exploring network structure, dynamics, and function using NetworkX." SciPy2008. 11–15(2008).
+                            	[13] "Multi-Channel EEG (BCI) Devices." In <i>NeuroSky</i> http://neurosky.com/2015/07/multi-channel-eeg-bci-devices/ Accessed 22 Mar. 2017.
                             <br>
-                                [11] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
+                                [14] A.A. Hagberg, D.A. Schult, P.J. Swart. "Exploring network structure, dynamics, and function using NetworkX." SciPy2008. 11–15(2008).
                             <br>
- 
-                            	[15] http://neurosky.com/2015/07/multi-channel-eeg-bci-devices/
+                                [15] M.E.J. Newman. "Modularity and community structure in networks." <i>Proc. Natl. Acad. Sci. USA</i> 103: 8577-8582 (2006).
+                            <br>
+                                [16] M. Bostock, V. Ogievetsky, J. Heer. "D3 data-driven documents." <i>IEEE Transactions on Visualization and Computer Graphics</i>, 17:12: 2301-2309 (Dec. 2011).
+
 
                         </div>
                     </div>
