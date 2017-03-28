@@ -49,7 +49,7 @@
                     <li><a href="#project1">Related Entries</a></li>
                     <li><a href="#project2">Paper Summary and Discussion</a></li>
                     <li><a href="#proposal">Proposal</a><li>
-                    <li><a href="#biological">Biological Background and Input-Output Example</a><li>
+                    <li><a href="#biological" onclick="displayD3Figure()">Biological Background and Input-Output Example </a><li>
                     </ul>
                 </li>
 				<li><a href="https://github.com/aznmonkey/comp-bio">Github Page</a></li>
@@ -348,9 +348,9 @@ The sample input is a .mat file. This is loaded into Python as a dictionary type
 <p>
 <u>Sample Output for DZ_M1</u><br> 	
 Graph:<br>
-<br><img src="graph.jpg">
+<br><img src="images/graph.jpg">
 <p>Basic Global Graph Measures:
-<p><img src="degree_distribution.jpg"><p>
+<p><img src="images/degree_distribution.jpg"><p>
 
 <table border=5>
 <col group span=2>
@@ -559,6 +559,7 @@ Community Detection:Modularity=1.970;
 <br>
 <br>
 <br>
+ <center><svg width="960" height="960"></svg></center>
 <br>
 <br>
 <br>
@@ -611,7 +612,8 @@ Community Detection:Modularity=1.970;
 
     </div>
     <!-- /.container -->
-	
+	<!-- D3.js -->
+    <script src="lib/d3.v4.js"></script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

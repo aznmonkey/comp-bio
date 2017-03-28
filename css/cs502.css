@@ -7,3 +7,15 @@
     width:100%;
     text-align: center;
 }
+
+body {
+  font: 10px sans-serif;
+}
+
+.group-tick line {
+  stroke: #000;
+}
+
+.ribbons {
+  fill-opacity: 0.67;
+}
