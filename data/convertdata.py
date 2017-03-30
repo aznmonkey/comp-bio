@@ -4,6 +4,11 @@ import glob
 
 
 def convertData(threshold, flag):
+    '''
+        Args: 
+            threshold(float): sets the threshold the data will be filtered to
+            flag (Boolean): determine whether or not the values across the diagonal will be zeroed out
+    '''
     for files in glob.glob("./Connect_*"):
         ##print(files)
         data = sio.loadmat(files)
@@ -26,8 +31,6 @@ def convertData(threshold, flag):
         #normalize array
         normalized = data_array/np.amin(data_array[np.nonzero(data_array)])*10
         trun = np.trunc(normalized)
-        ##print(trun)
-        ##print(files[2:-4])
         np.savetxt('json/'+files[2:-4]+'.json', trun, fmt='%i', delimiter=',')
 
 if __name__ == "__main__":
