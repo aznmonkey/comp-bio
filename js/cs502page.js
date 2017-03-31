@@ -115,7 +115,7 @@ function drawGraph(category, number, graph) {
         group.append("text")
                 .each(function(d) {d.angle = ((d.startAngle + d.endAngle) / 2); })
                 .attr("dy", ".35em")
-                .attr("font-size", 20)
+                .attr("font-size", 16)
                 .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
                 .attr("transform", function(d) {
                     return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
