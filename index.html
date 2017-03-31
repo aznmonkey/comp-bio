@@ -350,11 +350,34 @@ We believe that introducing a computational approach to a social problem can mot
 
 <b>Example network properties of one network matrix</b>
 <br>
-<u>Sample Input</u><br>
-The sample input is a .mat file. This is loaded into Python as a dictionary type, in which the dictionary key is a string data type and the dictionary value is a Numpy array data type. The array <b>M</b> is a 2-dimensional, 34*34  square matrix. Each <b>M</b><sub><i>ij</i></sub> is a floating point between 0 and 1 describing the pairwise connection between two channels <i>i</i>, <i>j</i>. As we will use it to build an undirected graph, the matrix is symmetric, M<sub><i>ij</i></sub> = M<sub><i>ji</i></sub>. Since we are only building edges between distinct channels <i>i</i>, <i>j</i>, M<sub><i>ii</i></sub> = 0.
+<u>Input</u><br>
+In abstract, the input <b>M</b> is a 2-dimensional, 34*34 square matrix. Each <b>M</b><sub><i>ij</i></sub> is a floating point between 0 and 1 describing the pairwise connection between two channels <i>i</i>, <i>j</i>. As we will use it to build an undirected graph, the matrix is symmetric, M<sub><i>ij</i></sub> = M<sub><i>ji</i></sub>. Since we are only building edges between distinct channels <i>i</i>, <i>j</i>, M<sub><i>ii</i></sub> = 0.<p>
+This input is stored as a .mat file. It can be loaded into Python as a dictionary type, in which the dictionary key is a string identifying the group and task, and the dictionary value is NumPy array that holds the matrix <b>M</b>. 
+<p>
+<p>
+<u>Output for Exploratory Analysis</u>
+<div>
+    <div>
+        <center>
+            <svg id="graph1" width="800" height="800"
+                 viewBox="0 0 800 800"
+                 preserveAspectRatio="xMidYMid meet">
+            </svg>
+            <br><br><br>
+            <div class = "select-style">
+                <select id="category1"></select>
+                <br><br>
+                <select id="number1"></select>
+                <br>
+                <br>
+            </div>
+                <button type="button" id="button1">Draw Chord Graph</button> 
+        </center>
+    </div>
+</div>
 
 <p>
-<u>Sample Output for DZ_M1</u><br> 	
+<u>Sample Output for Proposed Product (for the first SAD subject, on the <b>maintain</b> task)</u><br> 	
 Graph:<br>
 <br><img src="images/graph.jpg">
 <p>Basic Global Graph Measures:
@@ -469,25 +492,6 @@ Community Detection:Modularity=1.970;
 <br>
 <br>
 <br>
-<div>
-    <div>
-        <center>
-            <svg id="graph1" width="800" height="800"
-                 viewBox="0 0 800 800"
-                 preserveAspectRatio="xMidYMid meet">
-            </svg>
-            <br><br><br>
-            <div class = "select-style">
-                <select id="category1"></select>
-                <br><br>
-                <select id="number1"></select>
-                <br>
-                <br>
-            </div>
-                <button type="button" id="button1">Draw Chord Graph</button> 
-        </center>
-    </div>
-</div>
 <br>
 <br>
 <br>
