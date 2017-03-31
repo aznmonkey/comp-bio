@@ -38,8 +38,10 @@ body {
             <svg id="graph1" width="960" height="960"></svg>
             <br><br><br>
             <div class = "select-style">
-                <select multiple id="category1"></select>
-                <select multiple id="number1"></select>
+                <select  id="category1"></select>
+                <br>
+                <select  id="number1"></select>
+                <br><br>
                 <button type="button" id="button1">Redraw!</button> 
             </div>
         </center>
@@ -51,9 +53,10 @@ body {
             <svg id="graph2" width="960" height="960"></svg>
             <br><br><br>
             <div class = "select-style">
-            
-                <select multiple id="category2"></select>
-                <select multiple id="number2"></select>
+                <select id="category2"></select>
+                <br>
+                <select id="number2"></select>
+                <br><br>
                 <button type="button" id="button2">Redraw!</button>
             </div>
         </center>
@@ -252,6 +255,6 @@ $('#button1').click(function() {
 $('#button2').click(function() {
     var selected1 = $('#category2').find(":selected").text();
     var selected2 = $('#number2').find(":selected").text();
-    drawGraph(selected1, selected2, 1);
+    drawGraph(selected1, selected2, 2);
 });
 </script>
