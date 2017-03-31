@@ -352,7 +352,7 @@ We believe that introducing a computational approach to a social problem can mot
 <br>
 <u>Input</u><br>
 In abstract, the input <b>M</b> is a 2-dimensional, 34*34 square matrix. Each <b>M</b><sub><i>ij</i></sub> is a floating point between 0 and 1 describing the pairwise connection between two channels <i>i</i>, <i>j</i>. As we will use it to build an undirected graph, the matrix is symmetric, M<sub><i>ij</i></sub> = M<sub><i>ji</i></sub>. Since we are only building edges between distinct channels <i>i</i>, <i>j</i>, M<sub><i>ii</i></sub> = 0.<p>
-This input is stored as a .mat file. It can be loaded into Python as a dictionary type, in which the dictionary key is a string identifying the group and task, and the dictionary value is NumPy array that holds the matrix <b>M</b>. 
+This input is stored as a .mat file. It can be loaded into Python as a dictionary type, in which the dictionary key is a string identifying the group and task, and the dictionary value is a NumPy array that holds the matrix <b>M</b>. 
 <p>
 <p>
 <u>Output for Exploratory Analysis</u>
