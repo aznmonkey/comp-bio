@@ -51,7 +51,7 @@
                     <li><a href="#project1">Related Entries</a></li>
                     <li><a href="#project2">Paper Summary and Discussion</a></li>
                     <li><a href="#proposal">Proposal</a><li>
-                    <li><a href="#biological" onclick="displayD3Figure()">Biological Background and Input-Output Example </a><li>
+                    <li><a href="#biological" onclick="drawGraph(&quot;DZ_M&quot;,1,1);">Biological Background and Input-Output Example </a><li>
                     </ul>
                 </li>
 				<li><a href="https://github.com/aznmonkey/comp-bio">Github Page</a></li>
@@ -463,7 +463,25 @@ Community Detection:Modularity=1.970;
 <br>
 <br>
 <br>
- <center><svg width="960" height="960"></svg></center>
+<div>
+    <div>
+        <center>
+            <svg id="graph1" width="960" height="960"
+                 viewBox="0 0 960 960"
+                 preserveAspectRatio="xMidYMid meet">
+            </svg>
+            <br><br><br>
+            <div class = "select-style">
+                <select id="category1"></select>
+                <br><br>
+                <select id="number1"></select>
+                <br>
+                <br>
+            </div>
+                <button type="button" id="button1">Draw Chord Graph</button> 
+        </center>
+    </div>
+</div>
 <br>
 <br>
 <br>
@@ -520,7 +538,6 @@ Community Detection:Modularity=1.970;
     <script src="lib/d3.v4.js"></script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
