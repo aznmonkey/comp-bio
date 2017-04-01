@@ -79,7 +79,7 @@ def __init__():
             outframes[j].to_csv(i + channels[j] +'.csv')
         outframe = pandas.DataFrame({"DZ": tup1[len(channels)], "HC":tup2[len(channels)]})
         outframe.to_csv(i + "AvgClustCoefficiency.csv")
-    
+            
 def createGraph(path):
     G =[] # list of graphs for each file
     G_inv = []
@@ -96,6 +96,8 @@ def createGraph(path):
     lstFC6Degs = []
     lstIzDegs = []
     lstP7Degs = []
+    betCents = []
+    closeCents = []
 
     global labelToIndexMap
     
@@ -142,11 +144,23 @@ def createGraph(path):
         lstP7Degs.append(deg_cent_dict[labelToIndexMap["'P7'"]])
         
         #LEFT TO BE DONE: extract properties for select nodes from above from the below dictionaries
+        channels = ["FCz", "Fz", "T7", "T8", "FC2", "FC6"]
+
         bet_cent_dict = nx.betweenness_centrality(G_inv[n])
         close = nx.closeness_centrality(G_inv[n])
+
+        for channel in channels:
+            if labelToIndexMap["'" + channel + "'"] in bet_cent_dict:
+                betCents.append(bet_cent_dict[labelToIndexMap["'" + channel + "'"]])
+            else:
+                betCents.append(0)
+            if labelToIndexMap["'" + channel + "'"] in close:
+                closeCents.append(close[labelToIndexMap["'" + channel + "'"]])
+            else:
+                closeCents.append(0)
 
 
         n+=1
 
-    lst = (lstFCzDegs, lstFzDegs, lstT7Degs, lstT8Degs, lstFC2Degs,lstFC6Degs, lstIzDegs, lstP7Degs, clust_coeff)
+    lst = (lstFCzDegs, lstFzDegs, lstT7Degs, lstT8Degs, lstFC2Degs,lstFC6Degs, lstIzDegs, lstP7Degs, clust_coeff, betCents, closeCents)
     return lst
