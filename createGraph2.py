@@ -57,23 +57,20 @@ def __init__():
     for tup in frame.itertuples():
         labelToIndexMap[tup[1]] = it
         it+=1
-    
+
+    print(labelToIndexMap)
     lst = ["N", "M", "R"]
+    channels = ["FCz", "Fz", "T7", "T8", "FC2", "FC6", "Iz", "P7"]
+
+    outframes = [pandas.DataFrame() for k in range(0, len(channels))]
+    
     for i in lst:
         tup1 = createGraph("DZ_" + i)
         tup2 = createGraph("HC_" + i)
 
-        outframe = pandas.DataFrame({"DZ": tup1[0], "HC": tup2[0]})
-        outframe2 = pandas.DataFrame({"DZ": tup1[1], "HC": tup2[1]})
-        outframe3 = pandas.DataFrame({"DZ": tup1[2], "HC": tup2[2]})
-        outframe4 = pandas.DataFrame({"DZ": tup1[3], "HC": tup2[3]})
-
-        
-        outframe.to_csv(i + 'FCz.csv')
-        outframe2.to_csv(i + 'Fz.csv')
-        outframe3.to_csv(i + 'T7.csv',)
-        outframe4.to_csv(i + 'T8.csv')
-
+        for j in range(0, len(channels)):
+            outframes[j] = pandas.DataFrame({"DZ": tup1[j], "HC":tup2[j]})
+            outframes[j].to_csv(i + channels[j] +'.csv')
     
 def createGraph(path):
     G =[] # list of graphs for each file
@@ -85,6 +82,10 @@ def createGraph(path):
     lstFzDegs = []
     lstT7Degs = []
     lstT8Degs = []
+    lstFC2Degs = []
+    lstFC6Degs = []
+    lstIzDegs = []
+    lstP7Degs = []
 
     global labelToIndexMap
     
@@ -106,15 +107,24 @@ def createGraph(path):
         deg_cent_dict = nx.degree_centrality(G[n])
                 # returns a dictionary
 
+        print(deg_cent_dict)
         lstFCzDegs.append(deg_cent_dict[labelToIndexMap["'FCz'"]])
         lstFzDegs.append(deg_cent_dict[labelToIndexMap["'Fz'"]])
         lstT7Degs.append(deg_cent_dict[labelToIndexMap["'T7'"]])
         lstT8Degs.append(deg_cent_dict[labelToIndexMap["'T8'"]])
+        lstFC2Degs.append(deg_cent_dict[labelToIndexMap["'FC2'"]])
+        lstFC6Degs.append(deg_cent_dict[labelToIndexMap["'FC6'"]])
+        if labelToIndexMap["'Iz'"] in deg_cent_dict:
+            lstIzDegs.append(deg_cent_dict[labelToIndexMap["'Iz'"]])
+        else:
+            lstIzDegs.append(0)
+        lstP7Degs.append(deg_cent_dict[labelToIndexMap["'P7'"]])
+        
 
         #have to convert weights to a second, inverse version to perform the next function call
         #bet_cent_dict = nx.betweenness_centrality(G[n])
 
         n+=1
 
-    lst = (lstFCzDegs, lstFzDegs, lstT7Degs, lstT8Degs)
+    lst = (lstFCzDegs, lstFzDegs, lstT7Degs, lstT8Degs, lstFC2Degs,lstFC6Degs, lstIzDegs, lstP7Degs)
     return lst
