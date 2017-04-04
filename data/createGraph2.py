@@ -1,6 +1,6 @@
 #This file computes most of the graph properties we said we were going to investigate.
 
-#The only thing missing is that it does not yet generate the output files for the path-related properties: avg path length, betweenness, closeness per node. As well as debugging syntax errors when this is done.
+#The only thing missing is that it does not yet generate the output files for the path-related properties: avg path length, betweenness, closeness per node
 #THIS IS LEFT TO BE DONE.
 #Once this is generated, statistical tests also need to be done on the rest of the global properties.
 
@@ -77,9 +77,9 @@ def __init__():
         for j in range(0, len(channels)):
             outframes[j] = pandas.DataFrame({"DZ": tup1[j], "HC":tup2[j]})
             outframes[j].to_csv(i + channels[j] +'.csv')
-        outframe = pandas.DataFrame({"DZ": tup1[len(channels)], "HC":tup2[len(channels)]})
+        outframe = pandas.DataFrame({"DZ": tupl1[len(channels)]}, "HC":tup2[len(channels)]})
         outframe.to_csv(i + "AvgClustCoefficiency.csv")
-            
+    
 def createGraph(path):
     G =[] # list of graphs for each file
     G_inv = []
@@ -96,8 +96,6 @@ def createGraph(path):
     lstFC6Degs = []
     lstIzDegs = []
     lstP7Degs = []
-    betCents = []
-    closeCents = []
 
     global labelToIndexMap
     
@@ -126,7 +124,7 @@ def createGraph(path):
 
         for g in nx.connected_component_subgraphs(G_inv[n]):
             if len(g.nodes()) > 1:
-                print(nx.average_shortest_path_length(g))
+            print(nx.average_shortest_path_length(g))
             
         deg_cent_dict = nx.degree_centrality(G[n])
                 # returns a dictionary
@@ -144,23 +142,11 @@ def createGraph(path):
         lstP7Degs.append(deg_cent_dict[labelToIndexMap["'P7'"]])
         
         #LEFT TO BE DONE: extract properties for select nodes from above from the below dictionaries
-        channels = ["FCz", "Fz", "T7", "T8", "FC2", "FC6"]
-
         bet_cent_dict = nx.betweenness_centrality(G_inv[n])
         close = nx.closeness_centrality(G_inv[n])
-
-        for channel in channels:
-            if labelToIndexMap["'" + channel + "'"] in bet_cent_dict:
-                betCents.append(bet_cent_dict[labelToIndexMap["'" + channel + "'"]])
-            else:
-                betCents.append(0)
-            if labelToIndexMap["'" + channel + "'"] in close:
-                closeCents.append(close[labelToIndexMap["'" + channel + "'"]])
-            else:
-                closeCents.append(0)
 
 
         n+=1
 
-    lst = (lstFCzDegs, lstFzDegs, lstT7Degs, lstT8Degs, lstFC2Degs,lstFC6Degs, lstIzDegs, lstP7Degs, clust_coeff, betCents, closeCents)
+    lst = (lstFCzDegs, lstFzDegs, lstT7Degs, lstT8Degs, lstFC2Degs,lstFC6Degs, lstIzDegs, lstP7Degs, clust_coeff)
     return lst

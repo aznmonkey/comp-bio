@@ -10,6 +10,28 @@ for (channel in c("FCz", "Fz", "T7", "T8", "FC2", "FC6", "Iz", "P7")){
 	}
 }
 
+# betweenness
+for (channel in c("FCz", "Fz", "T7", "T8", "FC2", "FC6", "Iz", "P7")){
+	for (task in c("M", "R", "N")){ 
+		print(paste(task, channel, "bet", sep=""))
+		path<-paste("C:", "/", task, channel, "bet", ".csv", sep="")
+		df<-read.csv(path, header= TRUE)
+		ttest<-t.test(df['DZ'], df['HC'])
+		print(ttest)
+	}
+}
+
+# closeness
+for (channel in c("FCz", "Fz", "T7", "T8", "FC2", "FC6", "Iz", "P7")){
+	for (task in c("M", "R", "N")){ 
+		print(paste(task, channel, "close", sep=""))
+		path<-paste("C:", "/", task, channel, "close", ".csv", sep="")
+		df<-read.csv(path, header= TRUE)
+		ttest<-t.test(df['DZ'], df['HC'])
+		print(ttest)
+	}
+}
+
 for (task in c("M", "R", "N")){ 
 	print(paste(task, "AvgClustCoeffTTest", sep=""))
 	path<-paste("C:", "/", task, "AvgClustCoefficiency", ".csv", sep="")
@@ -17,3 +39,12 @@ for (task in c("M", "R", "N")){
 	ttest<-t.test(df['DZ'], df['HC'])
 	print(ttest)
 }
+
+for (task in c("M", "R", "N")){ 
+	print(paste(task, "ShortestPath", sep=""))
+	path<-paste("C:", "/", task, "ShortestPathLength", ".csv", sep="")
+	df<-read.csv(path, header= TRUE)
+	ttest<-t.test(df['DZ'], df['HC'])
+	print(ttest)
+}
+
