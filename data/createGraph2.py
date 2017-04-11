@@ -49,7 +49,7 @@ def __init__():
     hist = avgHist()
     global threshold
     global labelToIndexMap
-    threshold = hist[1][3]
+    threshold = hist[1][4]
 
     frame = pandas.read_csv("C:/Anaconda3/channel_info.csv")
     frame.dropna(inplace=True)
@@ -127,25 +127,23 @@ def createGraph(path):
 
         for i in range(0,34):
             for j in range(i +1, 34):
+                #convert weights to an inverse version
+                G_inv[n].add_edge(i,j,weight=1/(arr[i][j]))
+
                 if arr[i][j] >= threshold:
                     G[n].add_edge(i, j, weight = arr[i][j])
-                    #convert weights to a second, inverse version
-                    G_inv[n].add_edge(i,j,weight=1/(arr[i][j]))
 
         #Average Clustering Coefficient
         avg = nx.average_clustering(G[n])
         clust_coeff.append(avg)
 
-        shortest2 = dict()
+        shortest2 = 0
 
         for g in nx.connected_component_subgraphs(G_inv[n]):
             if len(g.nodes()) > 1:
-                shortest2[len(g.nodes())] = nx.average_shortest_path_length(g) 
+                shortest2= nx.average_shortest_path_length(g) 
 
-        '''http://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary'''
-        lst = [shortest2[key] for key in shortest2 if key == max(shortest2.keys())]
-
-        avg_shortest_path.append(lst[0])
+        avg_shortest_path.append(shortest2)
 
         deg_cent_dict = nx.degree_centrality(G[n])
                 # returns a dictionary
