@@ -36,7 +36,7 @@ def generateAverageMatrices(threshold, flag):
             if files.find(key) > 0:
                 file_key = key
   
-        count[file_key] += 1
+        count[file_key] += 1 #increment counter for that key
 
         data = sio.loadmat(files)
         
