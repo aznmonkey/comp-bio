@@ -13,7 +13,7 @@ def generateAverageMatrices(threshold, flag):
     keys = ['DZ_M','DZ_N', 'DZ_R', 'HC_M', 'HC_N', 'HC_R']
     count = {}
      
-    ##intialize average arrays
+    ##intialize average arrays for each task-group
     average_DZ_M = np.zeros((34,34,))
     average_DZ_N = np.zeros((34,34,))
     average_DZ_R = np.zeros((34,34,))
@@ -33,9 +33,11 @@ def generateAverageMatrices(threshold, flag):
         count[file_key] += 1
 
         data = sio.loadmat(files)
+        
+        # sum them up first
         for key in data:
-            if key in keys:
-                data_array = data[key]
+            if key in keys: # list of keys initialized in the beginning
+                data_array = data[key] # access the matrix
                 if key == 'DZ_M':
                     average_DZ_M = average_DZ_M + data_array
                 elif key == 'DZ_N':
@@ -51,11 +53,9 @@ def generateAverageMatrices(threshold, flag):
 
     ## calculate averages
     for key in keys:
-        average_array = eval('average_' + key)
-        average_array = average_array/count[key]
-        ##print(average_array)
+        average_array = eval('average_' + key) # concatenate variable names and evaluate as variable? https://docs.python.org/2/library/functions.html#eval
+        average_array = average_array/count[key] # find the average
         low_values_indices = average_array < threshold  # find low value indices
-        ## print(low_values_indices)
         data_array[low_values_indices] = 0
         
         ## flag to zero out number opposite the diagonal since it's an undirected graph
