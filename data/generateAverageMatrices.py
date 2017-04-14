@@ -61,7 +61,7 @@ def generateAverageMatrices(threshold, flag):
         # comparing np array to a floating point type using the operator < returns a boolean array of which ones are true and false
         #indexing into this array will perform an operation on all the entries for the indices that are true in this nparray
         
-        data_array[low_values_indices] = 0
+        average_array[low_values_indices] = 0
         
         ## flag to zero out number opposite the diagonal since it's an undirected graph
         if flag == True:
