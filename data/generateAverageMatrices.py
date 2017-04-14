@@ -1,7 +1,8 @@
 import scipy.io as sio
 import numpy as np
 import glob 
-
+import csv
+import pandas as pd
 
 def generateAverageMatrices(threshold, flag):
     '''
@@ -12,7 +13,11 @@ def generateAverageMatrices(threshold, flag):
     ##intialize counters
     keys = ['DZ_M','DZ_N', 'DZ_R', 'HC_M', 'HC_N', 'HC_R']
     count = {}
-     
+    community_assignments = []
+    df = pd.read_csv('CommunityAssignments.csv')
+    for key in keys:
+        community_assignments.append(df[key])
+
     ##intialize average arrays
     average_DZ_M = np.zeros((34,34,))
     average_DZ_N = np.zeros((34,34,))
@@ -58,19 +63,44 @@ def generateAverageMatrices(threshold, flag):
         ## print(low_values_indices)
         average_array[low_values_indices] = 0
         
+        ## map the rows to the correct communities
+        communities = {}
+        key_index = keys.index(key)
+        community_mapping = community_assignments[key_index]
+        max_community = max(community_mapping)
+        for i in range(max_community+1):
+            if i == 0:
+                continue
+            communities[i] = [j for j, x in enumerate(community_mapping) if x == i]
+        
+        ## rearrange the rows
+        for i in range(max_community+1):
+            if i == 0:
+                continue
+            for rows in communities[i]:
+                if rows == 0:
+                    rearranged_array = np.array(average_array[rows])
+                else:
+                    rearranged_array = np.vstack([rearranged_array, np.array(average_array[rows])])
+        
         ## flag to zero out number opposite the diagonal since it's an undirected graph
         if flag == True:
-            row = average_array.shape[0]
-            col = average_array.shape[1]
+            row = rearranged_array.shape[0]
+            col = rearranged_array.shape[1]
             for i in range(0, row):
                 for j in range(0, col):
                     if j < i:
+                        rearranged_array[i,j] = 0
                         average_array[i,j] = 0
         ## normalize array
-        normalized = average_array/np.amin(average_array[np.nonzero(average_array)])*10
+        normalized = rearranged_array/np.amin(rearranged_array[np.nonzero(rearranged_array)])*10
         trun = np.trunc(normalized)
-        ## save to file 
-        np.savetxt('average_json/' + key + '.json', trun, fmt='%i', delimiter=',')
+        
+        normalized_average = average_array/np.amin(average_array[np.nonzero(average_array)])*10
+        trun_average = np.trunc(normalized_average)
+        ## save to file  
+        np.savetxt('average_json/' + key + '_rearranged' + '.json', trun, fmt='%i', delimiter=',')
+        np.savetxt('average_json/' + key + '_average' + '.json', trun_average, fmt='%i', delimiter=',')
 
 if __name__ == "__main__":
     threshold = 0.02341644
