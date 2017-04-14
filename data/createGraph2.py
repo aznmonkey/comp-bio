@@ -49,7 +49,7 @@ def __init__():
     hist = avgHist()
     global threshold
     global labelToIndexMap
-    threshold = hist[1][4]
+    threshold = hist[1][3]
 
     frame = pandas.read_csv("C:/Anaconda3/channel_info.csv")
     frame.dropna(inplace=True)
