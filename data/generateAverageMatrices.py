@@ -35,11 +35,11 @@ def generateAverageMatrices(threshold, flag):
         data = sio.loadmat(files)
         
         # sum them up first
-        for key in data:
+        for key in data: # access the matlab dictionary
             if key in keys: # list of keys initialized in the beginning
                 data_array = data[key] # access the matrix
                 if key == 'DZ_M':
-                    average_DZ_M = average_DZ_M + data_array
+                    average_DZ_M = average_DZ_M + data_array # add the matrices together
                 elif key == 'DZ_N':
                     average_DZ_N = average_DZ_N + data_array
                 elif key == 'DZ_R':
@@ -53,9 +53,14 @@ def generateAverageMatrices(threshold, flag):
 
     ## calculate averages
     for key in keys:
-        average_array = eval('average_' + key) # concatenate variable names and evaluate as variable? https://docs.python.org/2/library/functions.html#eval
-        average_array = average_array/count[key] # find the average
+        average_array = eval('average_' + key) # concatenate variable names and evaluate as variable https://docs.python.org/2/library/functions.html#eval
+        average_array = average_array/count[key] # find the average, based on number of examples for that task group
         low_values_indices = average_array < threshold  # find low value indices
+        
+        #average_array is a np array
+        # comparing np array to a floating point type using the operator < returns a boolean array of which ones are true and false
+        #indexing into this array will perform an operation on all the entries for the indices that are true in this nparray
+        
         data_array[low_values_indices] = 0
         
         ## flag to zero out number opposite the diagonal since it's an undirected graph
