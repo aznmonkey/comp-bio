@@ -56,7 +56,7 @@ def generateAverageMatrices(threshold, flag):
         ##print(average_array)
         low_values_indices = average_array < threshold  # find low value indices
         ## print(low_values_indices)
-        data_array[low_values_indices] = 0
+        average_array[low_values_indices] = 0
         
         ## flag to zero out number opposite the diagonal since it's an undirected graph
         if flag == True:
