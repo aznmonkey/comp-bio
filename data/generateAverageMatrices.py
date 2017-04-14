@@ -11,14 +11,20 @@ def generateAverageMatrices(threshold, flag):
             flag (Boolean): determine whether or not the values across the diagonal will be zeroed out
     '''
     ##intialize counters
-    keys = ['DZ_M','DZ_N', 'DZ_R', 'HC_M', 'HC_N', 'HC_R']
+    keys = ['HC_N', 'HC_M', 'HC_R', 'DZ_N', 'DZ_M', 'DZ_R']
     count = {}
     community_assignments = []
+    channel_info = []
     df = pd.read_csv('CommunityAssignments.csv')
     for key in keys:
         community_assignments.append(df[key])
 
 
+    with open('channel_info.csv') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            channel_info.append(row)
+            
     ##intialize average arrays for each task-group
     average_DZ_M = np.zeros((34,34,))
     average_DZ_N = np.zeros((34,34,))
@@ -70,11 +76,12 @@ def generateAverageMatrices(threshold, flag):
         key_index = keys.index(key)
         community_mapping = community_assignments[key_index]
         max_community = max(community_mapping)
+        rearranged_channels = []
+        rearranged_channels.append(['Nodes'])
         for i in range(max_community+1):
             if i == 0:
                 continue
             communities[i] = [j for j, x in enumerate(community_mapping) if x == i]
-        
         ## rearrange the rows
         for i in range(max_community+1):
             if i == 0:
@@ -82,10 +89,12 @@ def generateAverageMatrices(threshold, flag):
             for rows in communities[i]:
                 if rows == 0:
                     rearranged_array = np.array(average_array[rows])
+                    rearranged_channels.append(channel_info[rows+1])
                 else:
                     rearranged_array = np.vstack([rearranged_array, np.array(average_array[rows])])
-
-        
+                    rearranged_channels.append(channel_info[rows+1])
+        ##print(key)
+        ##print(rearranged_channels)
         #average_array is a np array
         # comparing np array to a floating point type using the operator < returns a boolean array of which ones are true and false
         #indexing into this array will perform an operation on all the entries for the indices that are true in this nparray
@@ -108,6 +117,16 @@ def generateAverageMatrices(threshold, flag):
         normalized_average = average_array/np.amin(average_array[np.nonzero(average_array)])*10
         trun_average = np.trunc(normalized_average)
         ## save to file  
+        ## save new channel mappings
+        with open('rearranged_channels/channel_info_'+ key + '_rearranged.csv', "wb") as csv_file:
+            csv_file.truncate()
+            writer = csv.writer(csv_file, delimiter=',')
+            for row in rearranged_channels:
+                if row == "Nodes":
+                    writer.writerow([row])
+                else:
+                    writer.writerow(row)
+        ## save new matrices
         np.savetxt('average_json/' + key + '_rearranged' + '.json', trun, fmt='%i', delimiter=',')
         np.savetxt('average_json/' + key + '_average' + '.json', trun_average, fmt='%i', delimiter=',')
 
