@@ -561,6 +561,21 @@ autonomic nervous system, regulation of emotion, and stress
 
                     <u>Procedure</u><br>
                     1. Our first step was to preprocess Matlab data into an input format useable to our processing using Python.<br>
+<p>
+	
+	<u>Node and Global Properties</u><br>
+2. Since the matrix comes with an edge between every node, we only want to consider the edges of higher weights for degree centrality and clustering coefficient. Based on a histogram analysis, we only consider edges from above the lowest 2 bins of weights for degree centrality and clustering coefficient.
+<br>3. Using NetworkX, we converted the matrix for each subject for each task into a graph. 
+<br>4. We ran the degree centrality and average clustering coefficient on each graph.
+<br>5. Based on our background research, and the nodes that stuck out on our chord graph of adjacency relationships, we performed t-tests on nodes of interest, comparing DZ and HC degree centralities per task.
+6. To run the shortest path, we used the inverse of the original weights as the path length.<br>
+7. We also ran t-tests comparing average clustering coefficient and shortest path for DZ and HC, per task.
+
+			    <p><p><br><br>
+			    <u>Results</u>
+			   <br>We did not find statistically significant differences between DZ and HC in degree centrality for our channels of interest when averaged across subjects, for the maintain task.
+We did not find statistically significant differences between DZ and HC in average clustering coefficient or shortest path when averaged across subjects, for any of the 3 tasks.
+
 			    
 			    <p><p><br><br>
 				    <u>Limitations of Our Approach</u><br>
