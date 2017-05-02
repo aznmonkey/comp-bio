@@ -561,8 +561,22 @@ autonomic nervous system, regulation of emotion, and stress
 			    We encourage you to review the updated Research Method section of our <a href="https://aznmonkey.github.io/comp-bio/#procedureresults">proposal</a>.
 			    <br><br><p>
 
-                    <u>Procedure</u><br>
-                    1. Our first step was to preprocess Matlab data into an input format useable to our processing using Python.<br>
+			    <u><b>Procedure</b></u><br>
+			    1. <u>Data Preprocessing</u><br>
+                    a. Preprocess Matlab data into an input format useable to our processing using Python.<br>
+		b. Since there is a weighted edge between every node, consider only higher-weight edges of higher weights for degree centrality and clustering coefficient.
+			    c. Perform <b>histogram</b> analysis: only consider edges from above the lowest 2 bins of weights, when averaged across all matrices, for degree centrality and clustering coefficient.
+<p>
+	<br>
+	2. <u>Visualization</u><br>
+Input: Adjacency Matrix<br>
+Output: Chord Diagrams<br>
+Implemented using D3.js<br>
+Set a display threshold based on histogram analysis<br>
+Chord Diagrams for each patient to allow for comparison between individuals<br>
+Only relative values display
+
+			    
 <p>
 	<br>
 	<u>Node and Global Properties</u><br>
