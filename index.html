@@ -584,14 +584,17 @@ autonomic nervous system, regulation of emotion, and stress
 			    </ul>
 			    
 	<br>
-	3. <u>Node and Global Properties</u><br>
-2. Since the matrix comes with an edge between every node, we only want to consider the edges of higher weights for degree centrality and clustering coefficient. Based on a histogram analysis, we only consider edges from above the lowest 2 bins of weights for degree centrality and clustering coefficient.
-<br>3. Using NetworkX, we converted the matrix for each subject for each task into a graph. 
-<br>4. We ran the degree centrality and average clustering coefficient on each graph.
-<br>5. Based on our background research, and the nodes that stuck out on our chord graph of adjacency relationships, we performed t-tests on nodes of interest, comparing DZ and HC degree centralities per task.
-<br>6. To run the shortest path, we used the inverse of the original weights as the path length.<br>
-7. We also ran t-tests comparing average clustering coefficient and shortest path for DZ and HC, per task.
-
+	3. <u>Node and Global Properties</u>
+			    <ol type=a>
+<li>Using NetworkX, convert the matrix for each subject for each task into a graph. 
+<li>Find the degree centrality for each node on each graph.
+<li>Based on our background research, and the nodes that stuck out on our chord graph of adjacency relationships, perform t-tests on nodes of interest, comparing DZ and HC degree centralities per task.
+<li>Run average clustering coefficient on each graph.
+<li>Run t-tests comparing average clustering coefficient for DZ and HC, per task
+<li>To run the average shortest path, use the inverse of the original weights as the path length.
+<li>Run t-tests comparing average shortest path for DZ and HC, per task
+<li>Run a 2-way ANOVA for group and task interactions on clustering coefficient and shortest path.
+			    </ol>
 			    <p><p><br><br>
 			    <u>Results</u>
 			   <br>We did not find statistically significant differences between DZ and HC in degree centrality for our channels of interest when averaged across subjects, for the maintain task.
