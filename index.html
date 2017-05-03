@@ -573,7 +573,7 @@ autonomic nervous system, regulation of emotion, and stress
 		<li>Since there is a weighted edge between every node, consider only higher-weight edges of higher weights for degree centrality and clustering coefficient.<br>
 			    <li>Perform <b>histogram</b> analysis: only consider edges from above the lowest 2 bins of weights, when averaged across all matrices, for degree centrality and clustering coefficient.<br>
 			    </ol>
-	2. <u>Visualization</u><br>
+	2. <u>Exploratory Analysis Visualization</u><br>
 	<ul>
 <li>Input: Adjacency Matrix<br>
 <li>Output: Chord Diagrams<br>
@@ -582,9 +582,7 @@ autonomic nervous system, regulation of emotion, and stress
 <li>One Diagram for each subject for each task to allow for comparison between individuals: View <a href="https://aznmonkey.github.io/comp-bio/test.html">here</a><br>
 <li>Only relative values display
 			    </ul>
-			    
-	<br>
-	3. <u>Node and Global Properties</u>
+			    	3. <u>Node and Global Properties</u>
 			    <ol type=a>
 <li>Using NetworkX, convert the matrix for each subject for each task into a graph. 
 <li>Find the degree centrality for each node on each graph.
@@ -594,6 +592,12 @@ autonomic nervous system, regulation of emotion, and stress
 <li>To run the average shortest path, use the inverse of the original weights as the path length.
 <li>Run t-tests comparing average shortest path for DZ and HC, per task
 <li>Run a 2-way ANOVA for group and task interactions on clustering coefficient and shortest path.
+			    </ol>
+			    4. <u>Louvain Community Detection and Visualizations of the Community Assignment</u>
+			    <ol type=a>
+<li>Each subject has 50 runs, each task has 1000 runs
+<li>Track the variance of the modularity and randomness of the community assignment 
+<li>Second set of chord diagrams, averaged based on community assignments 
 			    </ol>
 			    <p><p><br><br>
 			    <u>Results</u>
