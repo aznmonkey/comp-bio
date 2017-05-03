@@ -611,7 +611,16 @@ autonomic nervous system, regulation of emotion, and stress
 <li>resolution limits (unable to detect small community) 
 <li>greedy optimization (run time: O(n log n))
 			    </ol>
+<ol>
+			    Start: Each node is its own community, 
+<li>Moving node i from community i to its neighbor j, calculate the change of Q
 
+
+
+    <li>  If Q increases, move i to j, otherwise, i stays in i
+<li>Repeat until Q stays the same
+<li>Builds a new network where nodes are the communities from the previous phase. Intra-community links will be self-loops and inter-community links will be edges between the nodes. Used the new network to repeat the step 1 and 2. 
+			    </ol>
 
 			    <b><u>Results</u></b>
 			    <p><p><br><br>
