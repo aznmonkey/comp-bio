@@ -642,11 +642,28 @@ Significant task effect (p=0.002)  for shortest path length: for both healthy an
 			    			    <p><p><br><br>
 
 			    <p><p><br><br>
-			    <u>Variance and randomness of the community </u><br>
+			    <u> Community Assignments</u><br>
+			    The Louvain Algorithm outputs an integer number denoting the community number each node is assigned to. We fixed the community that the first node is assigned to. We then aggregated the assignments of nodes to communities using the modal value of the community assignment for each node for each task-group, across the 50 independent trials per task-group.
+<br><p>
 
-Variance: all groups Var(Q) < 10^-3 <br>
+			    <u>Evaluation of Louvain Results:</u><br>
 
-Average randomness: ~0.65 (0<randomness<1, the lower the more random the data is)<br>
+to determine whether the results of Louvain are useful for making community assignments:<br>
+<ol>
+<li><u>Variance</u> of modularity per group: all groups Var(Q)<10^-3 <br>
+Each of the 1000 trials of Louvain has a modularity value: the density of interconnections
+The lower the variance, the more stable the modularity is.
+
+	<li><u>Rand Index</u>: a similarity measure that takes as input 2 vectors of community assignments and returns a float between 0 and 1 to determine the similarity between the pair of assignments. This tells us the randomness of the assignments. The closer the value is to 0, the more random the assignments are. The closer the value is to 1, the more the pair of community assignments coincide with each other.
+
+<br>Because Louvain is initialized with a random seed, the initial seed can make a difference in the community assignments.
+
+<br>Rand Index is run on each pair of the 1000 independent assignments.
+
+<br>Average Rand Value: ~0.65
+			    </ol>
+<p>
+<br>Thus, there is a stable community assignment for each task/group.
 
 There is a stable community assignment for each task/group.<br><p>
 			    See community assignments <a href="https://aznmonkey.github.io/comp-bio/compare_averages.html">here</a>.
