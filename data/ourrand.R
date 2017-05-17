@@ -1,6 +1,8 @@
 sink("rand.txt", append=FALSE, split=FALSE)
 
 library("igraph")
+
+#c combines these items into a list
 for (task in c("M", "R", "N")){
 	for (subject in c("HC", "DZ")){
 		path <- paste(task, subject, sep="")
